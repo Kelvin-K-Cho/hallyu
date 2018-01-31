@@ -1,5 +1,5 @@
 class Api::SessionsController < ApplicationController
-  
+
   def create
     @user = User.find_by_credentials(
       params[:user][:email],
@@ -14,7 +14,7 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout!
+    logout
     render json: { message: 'Logout successful.' }
   end
 
