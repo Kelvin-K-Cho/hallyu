@@ -16,6 +16,6 @@ export default () => (
         <h1>Hallyu</h1>
       </Link>
     </header>
-    <Route path='/signup' component={SignupContainer}/>
+    <Route path='/' component={SignupContainer}/>
   </div>
 );
