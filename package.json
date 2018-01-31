@@ -32,7 +32,8 @@
     "webpack": "webpack -w",
     "postinstall": "webpack"
   },
-  "devDependencies": {},
+  "devDependencies": {    
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kelvin-K-Cho/hallyu.git"
