@@ -21,7 +21,9 @@ class NavBar extends React.Component {
       display = (
         <div>
           <h1>Hello, {this.props.currentUser.email}</h1>
-          <button onClick={this.props.logout}>Logout</button>
+          <Link to={"/"}>
+            <button id="button-logout" onClick={this.props.logout}>Logout</button>
+          </Link>
         </div>
       );
     } else {
