@@ -10,12 +10,10 @@ const mapStateToProps = (state, ownProps) => ({
   errors: state.errors
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  const formType = ownProps.location.pathname.slice(1);
+const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
-    clearErrors: () => dispatch(clearErrors()),
-    formType
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 
