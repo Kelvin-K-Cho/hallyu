@@ -1,0 +1,56 @@
+.div-session {
+  color: #fff;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.div-session h1 {
+  margin-top: 10px;
+  font-size: 47px;
+  font-weight: 400;
+}
+
+.form-session {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.form-session input {
+  display: block;
+  width: 250px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+#email-session {
+  margin-top: 25px;
+}
+
+#password-session {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-session button {
+  width: 256px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  background-color: #224099;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.form-session button:hover {
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+   text-align: left;
+   font-size: 15px;
+}

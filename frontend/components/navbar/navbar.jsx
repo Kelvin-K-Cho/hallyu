@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ErrorList from '../error/error_list';
 
-export default ( { currentUser, logout, path} ) => {
+export default ( { currentUser, logout, path, errors} ) => {
   let display;
   if (currentUser) {
     display = (
@@ -13,14 +14,14 @@ export default ( { currentUser, logout, path} ) => {
   } else {
     let link;
     if (path === '/signup') {
-      link = <Link className="button-login" to={"/login"}>Log In</Link>;
+      link = <Link id="button-login" to={"/login"}>Log In</Link>;
     } else if (path === '/login') {
-      link = <Link className="button-signup" to={"/signup"}>Sign Up</Link>;
+      link = <Link id="button-signup" to={"/signup"}>Sign Up</Link>;
     } else {
       link =
       <div>
-        <Link className='btn' to="/signup">Sign Up</Link>
-        <Link className='btn' to="/login">Log In</Link>
+        <Link id='button-signup' to="/signup">Sign Up</Link>
+        <Link id='button-login' to="/login">Log In</Link>
       </div>;
     }
     display = (
@@ -31,7 +32,10 @@ export default ( { currentUser, logout, path} ) => {
   }
   return (
     <header className="nav-bar">
-      <h1 className="logo">Hallyu</h1>
+      <Link to="/">
+        <h1 id="logo">Hallyu</h1>
+      </Link>
+      <ErrorList errors={ errors } />
       <div>
         {display}
       </div>

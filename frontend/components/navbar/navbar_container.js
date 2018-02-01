@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import NavBar from './nav_bar';
+import NavBar from './navbar';
 import { logout } from '../../actions/session';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  path: ownProps.location.pathname
+  path: ownProps.location.pathname,
+  errors: state.errors
 });
 
 const mapDispatchToProps = (dispatch) => ({
