@@ -14,9 +14,17 @@ class NavBar extends React.Component {
 
   render () {
     let display;
+    let logo = (
+      <Link to="/">
+        <h1 id="logo">Hallyu</h1>
+      </Link>
+    );
     if (this.props.currentUser) {
       display = (
         <div>
+          <Link id='link-logo' to="/">
+            <h1 id="logo-fixed">Hallyu</h1>
+          </Link>
           <Link to={"/"}>
             <button id="button-logout" onClick={this.props.logout}>Logout</button>
           </Link>
@@ -41,17 +49,30 @@ class NavBar extends React.Component {
         </div>
       );
     }
-    return (
-      <header className="nav-bar">
-        <Link to="/">
-          <h1 id="logo">Hallyu</h1>
-        </Link>
-        <ErrorList errors={ this.props.errors } />
-        <div>
-          {display}
-        </div>
-      </header>
-    );
+
+    if (!this.props.currentUser) {
+      return (
+        <header className="nav-bar">
+          {logo}
+          <ErrorList errors={ this.props.errors } />
+          <div>
+            {display}
+          </div>
+        </header>
+      );
+    } else {
+      return (
+        <header className="nav-bar">
+          <Link id="link-stations" to={"/stations"}>
+            My Stations
+          </Link>
+          <ErrorList errors={ this.props.errors } />
+          <div>
+            {display}
+          </div>
+        </header>
+      );
+    }
   }
 }
 

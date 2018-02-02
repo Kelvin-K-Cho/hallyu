@@ -15,7 +15,11 @@ class StationIndex extends React.Component {
             this.props.stations.map(station => (
               <StationIndexItem
                key={station.id}
-               station={station} />
+               station={station}
+               deleteStation={this.props.deleteStation}
+               currentUser={this.props.currentUser}
+               stationId={station.id}
+               />
             ))
           }
         </ul>

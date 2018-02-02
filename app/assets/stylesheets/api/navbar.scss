@@ -10,6 +10,24 @@ div {
   color: #fff;
 }
 
+#link-logo {
+  text-decoration: none;
+}
+
+#logo-fixed {
+  display: inline;
+  margin-right: 20px;
+  font-size: 16px;
+  color: #e6e6e6;
+}
+
+#link-stations {
+  display: inline-block;
+  font-size: 16px;
+  margin: 25px 0 0 50px;
+  color: #e6e6e6;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
