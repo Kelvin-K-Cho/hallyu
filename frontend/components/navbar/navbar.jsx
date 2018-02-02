@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import ErrorList from '../error/error_list';
 
 class NavBar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentWillReceiveProps(newProps) {
     if (this.props.location.pathname !== newProps.location.pathname) {
@@ -15,12 +12,11 @@ class NavBar extends React.Component {
     }
   }
 
-  render (){
+  render () {
     let display;
     if (this.props.currentUser) {
       display = (
         <div>
-          <h1>Hello, {this.props.currentUser.email}</h1>
           <Link to={"/"}>
             <button id="button-logout" onClick={this.props.logout}>Logout</button>
           </Link>

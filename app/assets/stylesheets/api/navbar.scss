@@ -43,6 +43,20 @@ div {
   margin: 20px 20px 0px 0px;
 }
 
+#button-logout {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+  padding: 3px 10px 3px 10px;
+  background-color: #fff;
+  color: #224099;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 20px 20px 0px 0px;
+}
+
 .list-error {
   position: absolute;
   margin-top: 20px;

@@ -10,6 +10,7 @@ import {
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import NavBarContainer from './navbar/navbar_container';
+import StationIndexContainer from './station/station_index_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route';
 import Home from './home/home';
 
@@ -22,6 +23,7 @@ export default () => (
       <Route exact path="/" component={Home} />
       <AuthRoute path='/signup' component={SignupContainer}/>
       <AuthRoute path='/login' component={LoginContainer} />
+      <ProtectedRoute path="/stations" component={StationIndexContainer} />
       <Redirect to="/" />
     </Switch>
   </div>
