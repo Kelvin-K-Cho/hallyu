@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class StationIndexItem extends React.Component {
   render () {
@@ -7,6 +8,7 @@ class StationIndexItem extends React.Component {
       <li>
         <img className="img-image" src={station.image_url}/>
         <div className="text-image">{station.station_name}</div>
+        <Link to={`/stations/${stationId}`}>Details</Link>
         <button onClick={() => deleteStation(currentUser.id, stationId)}>Delete</button>
       </li>
     );
