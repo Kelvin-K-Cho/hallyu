@@ -19,8 +19,13 @@ class Station < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-  has_many :stations,
+  has_many :tags,
     primary_key: :id,
     foreign_key: :station_id,
-    class_name: :Station
+    class_name: :Tag
+
+  has_many :tracks,
+    through: :tags,
+    source: :track
+
 end

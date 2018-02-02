@@ -20,8 +20,13 @@ class Track < ApplicationRecord
     foreign_key: :album_id,
     class_name: :Album
 
-  has_many :tracks,
+  has_many :tags,
     primary_key: :id,
     foreign_key: :track_id,
     class_name: :Track
+
+  has_many :stations,
+    through: :tags,
+    source: :station
+
 end
