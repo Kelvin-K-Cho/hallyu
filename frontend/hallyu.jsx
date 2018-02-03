@@ -5,14 +5,16 @@ import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore(preloadedState);
-  let preloadedState = undefined;
+  let store;
   if (window.currentUser) {
-    preloadedState = {
+    const preloadedState = {
       session: {
         currentUser: window.currentUser
       }
     };
+    store = configureStore(preloadedState);
+  } else {
+    store = configureStore();
   }
   window.getState = store.getState; window.dispatch = store.dispatch;
   ReactDOM.render(<Root store={store} />, root);

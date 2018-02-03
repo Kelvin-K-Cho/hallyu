@@ -9,7 +9,7 @@ class StationShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!this.props.match.params.stationId) {
+    if (this.props.match.params.stationId !== nextProps.match.params.stationId) {
       this.props.fetchStation(this.props.currentUser.id, nextProps.match.params.stationId);
     }
   }
@@ -25,9 +25,9 @@ class StationShow extends React.Component {
     }
     return (
       <div id="container-station">
-        <img id="img-station" src={station.image_url}/>
         <h1 id="name-station">{station.station_name}</h1>
         <Link className="link-edit" to={`/stations/${station.id}/`}>Edit</Link>
+        <img id="img-station" src={station.image_url}/>
         <p id="body-station">{station.description}</p>
       </div>
     );
