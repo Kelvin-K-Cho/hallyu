@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import StationShow from './station_show';
-import { fetchStation } from '../../actions/stations';
+import { fetchStation, deleteStation } from '../../actions/stations';
 
 const mapStateToProps = (state, ownProps) => ({
   station: state.entities.stations[ownProps.match.params.stationId],
@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchStation: (userId, id) => dispatch(fetchStation(userId, id))
+  fetchStation: (userId, id) => dispatch(fetchStation(userId, id)),
+  deleteStation: (userId, stationId) => dispatch(deleteStation(userId, stationId))
 });
 
 export default connect(

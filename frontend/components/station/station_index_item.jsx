@@ -8,8 +8,10 @@ class StationIndexItem extends React.Component {
       <li>
         <img className="img-image" src={station.image_url}/>
         <div className="text-image">{station.station_name}</div>
-        <Link to={`/stations/${stationId}`}>Details</Link>
-        <button onClick={() => deleteStation(currentUser.id, stationId)}>Delete</button>
+        <div className="links-item">
+          <Link className="link-details" to={`/stations/${stationId}`}>Details</Link>
+          <button onClick={() => deleteStation(currentUser.id, stationId)}>Delete</button>
+        </div>
       </li>
     );
   }

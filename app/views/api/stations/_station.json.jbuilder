@@ -1,1 +1,1 @@
-json.extract! station, :id, :description, :image_url
+json.extract! station, :id, :station_name, :description, :image_url

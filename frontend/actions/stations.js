@@ -28,7 +28,7 @@ export const fetchStations = (userId) => dispatch => (
 
 export const fetchStation = (userId, id) => dispatch => (
   StationAPIUtil.fetchStation(userId, id).then(
-    station => { dispatch(receiveStation(station)); dispatch(clearErrors());},
+    station => { dispatch(receiveStation(station[id])); dispatch(clearErrors());},
     err => dispatch(receiveErrors(err.responseJSON)))
 );
 

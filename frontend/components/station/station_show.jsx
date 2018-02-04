@@ -15,7 +15,7 @@ class StationShow extends React.Component {
   }
 
   render(){
-    const station = this.props.station;
+    const {station, currentUser, deleteStation} = this.props;
     if (!station) {
       return (
         <section>
@@ -25,10 +25,23 @@ class StationShow extends React.Component {
     }
     return (
       <div id="container-station">
-        <h1 id="name-station">{station.station_name}</h1>
-        <Link className="link-edit" to={`/stations/${station.id}/`}>Edit</Link>
-        <img id="img-station" src={station.image_url}/>
-        <p id="body-station">{station.description}</p>
+        <h1 id="name-station">
+          {station.station_name} &nbsp;
+          <Link className="link-edit" to={`/stations/${station.id}/`}>Edit</Link>
+        </h1>
+        <div id="body-station">
+          <img id="img-station" src={station.image_url}/>
+          <p id="description-station">
+            <div>Station Description:</div>
+            <br/>
+            {station.description}
+            <br/>
+            <button id="delete-station"
+              onClick={() => deleteStation(currentUser.id, station.id)}
+              to={"/stations"}> Delete
+            </button>
+          </p>
+        </div>
       </div>
     );
   }

@@ -19,14 +19,64 @@
   color: #fff;
 }
 
+.links-item {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.link-details {
+  margin-left: 50px;
+}
+
 #name-station {
-  margin-top: 20px;
-  display: block;
   color: #fff;
   font-size: 40px;
+  display: block;
   text-align: center;
 }
 
-#link-edit {
-  display: inline;
+.link-edit {
+  font: sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+#body-station {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin-top: 20px;
+}
+
+#img-station {
+  float: left;
+  width: 270px;
+  height: 270px;
+  padding: 20px;
+}
+
+#description-station div {
+  color: #fff;
+  font-weight: 600;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+#description-station {
+  width: 30%;
+  color: #fff;
+  padding: 20px;
+}
+
+#delete-station {
+  margin-top: 147px;
+  margin-left: 525px;
+  height: 20px;
+}
+
+#img-loading {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
