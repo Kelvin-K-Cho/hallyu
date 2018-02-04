@@ -27,20 +27,22 @@ class StationShow extends React.Component {
       <div id="container-station">
         <h1 id="name-station">
           {station.station_name} &nbsp;
-          <Link className="link-edit" to={`/stations/${station.id}/`}>Edit</Link>
+          <Link className="link-edit" to={`/stations/${station.id}/edit`}>Edit</Link>
         </h1>
         <div id="body-station">
           <img id="img-station" src={station.image_url}/>
-          <p id="description-station">
-            <div>Station Description:</div>
+          <div id="description-station">
+            <div>Station Description:
+              <Link to={"/stations"}>
+                <button id="delete-station"
+                  onClick={() => deleteStation(currentUser.id, station.id)}>Delete
+                </button>
+              </Link>
+            </div>
             <br/>
             {station.description}
             <br/>
-            <button id="delete-station"
-              onClick={() => deleteStation(currentUser.id, station.id)}
-              to={"/stations"}> Delete
-            </button>
-          </p>
+          </div>
         </div>
       </div>
     );

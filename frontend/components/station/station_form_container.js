@@ -13,10 +13,29 @@ const mapStateToProps = (state, ownProps) => {
     formType = 'new';
   } else {
     station = state.entities.stations[ownProps.match.params.stationId];
-    
+    formType = 'edit';
   }
   return {
+    currentUser: state.session.currentUser,
     station,
     formType
-  }
+  };
 };
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  let action;
+  if (!ownProps.match.params.stationId) {
+    action = createStation;
+  } else {
+    action = updateStation;
+  }
+  return {
+    fetchStation: (userId, id) => dispatch(fetchStation(userId, id)),
+    action: (userId, station) => dispatch(action(userId, station))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(StationForm);

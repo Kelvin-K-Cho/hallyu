@@ -5,6 +5,10 @@
   flex-wrap: wrap;
 }
 
+.container-image li {
+  text-decoration: none;
+}
+
 .img-image {
   width: 180px;
   height: 180px;
@@ -27,6 +31,27 @@
 
 .link-details {
   margin-left: 50px;
+  width: 50px;
+  text-align: center;
+  padding: 7px 15px 5px 15px;
+  background-color: hsla(0,0%,100%,.2);
+  color: #fff;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+#button-dstation {
+  width: 70px;
+  padding: 5px 10px 5px 10px;
+  background-color: #fff;
+  color: #224099;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
 }
 
 #name-station {
@@ -70,13 +95,99 @@
 }
 
 #delete-station {
-  margin-top: 147px;
-  margin-left: 525px;
-  height: 20px;
+  position: absolute;
+  margin-left: 125px;
+  height: 26px;
+  width: 70px;
+  padding: 5px 10px 5px 10px;
+  background-color: #fff;
+  color: #224099;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
 }
 
 #img-loading {
   display: block;
+  width: 1024px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#img-adding {
+  width: 180px;
+  height: 180px;
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+#text-adding {
+  margin-top: 10px;
+  margin-left: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+#form-header {
+  margin-top: 25px;
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+#form-submit div {
+  margin: 20px;
+  height: 100%;
+  color: #fff;
+  display: block;
+  text-align: center;
+}
+
+#form-name {
+  padding-right: 405px;
+}
+
+#form-description {
+  padding-right: 419px;
+}
+
+#form-image {
+  padding-right: 430px;
+}
+
+#form-input {
+  margin-left: 467px;
+  width: 500px;
+}
+
+#form-textarea {
+  margin-left: 467px;
+  width: 500px;
+  height: 60px;
+}
+
+#form-cancel {
+  margin-top: 30px;
+  margin-left: 860px;
+  width: 50px;
+  background-color: #fff;
+  color: #224099;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: normal;
+}
+
+#form-button {
+  width: 50px;
+  background-color: hsla(0,0%,100%,.2);
+  color: #fff;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: normal;
 }

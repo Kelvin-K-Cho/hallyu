@@ -1,5 +1,7 @@
 import React from 'react';
 import StationIndexItem from './station_index_item';
+import { Link } from 'react-router-dom';
+import AddingIcon from './adding_icon';
 
 class StationIndex extends React.Component {
 
@@ -22,6 +24,11 @@ class StationIndex extends React.Component {
                />
             ))
           }
+          <Link to={`/stations/new`}>
+            <li>
+              <AddingIcon/>
+            </li>
+          </Link>
         </ul>
       </section>
     );

@@ -38,6 +38,8 @@ class Api::StationsController < ApplicationController
     end
   end
 
+  private
+
   def station_params
     params.require(:station).permit(:station_name, :description, :image_url)
   end
