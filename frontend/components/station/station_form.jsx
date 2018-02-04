@@ -31,7 +31,11 @@ class StationForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const station = Object.assign({}, this.state);
-    this.props.action(this.props.currentUser.id, station).then(() => this.props.history.push(`/stations/${station.id}`));
+    if (!this.state.id) {
+      this.props.action(this.props.currentUser.id, station).then(() => this.props.history.push(`/stations/`));
+    } else {
+      this.props.action(this.props.currentUser.id, station).then(() => this.props.history.push(`/stations/${station.id}`));
+    }
   }
 
   render() {
