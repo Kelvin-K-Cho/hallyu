@@ -40,6 +40,7 @@ class StationShow extends React.Component {
               </Link>
             </div>
             <br/>
+            <br/>
             {station.description}
             <br/>
           </div>

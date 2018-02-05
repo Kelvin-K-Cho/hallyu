@@ -21,13 +21,14 @@ class NavBar extends React.Component {
     );
     if (this.props.currentUser) {
       display = (
-        <div>
+        <div id='container-nav'>
           <Link id='link-logo' to="/">
             <h1 id="logo-fixed">Hallyu</h1>
           </Link>
           <Link to={"/"}>
             <button id="button-logout" onClick={this.props.logout}>Logout</button>
           </Link>
+          <img id="image-user" src={this.props.currentUser.image_url}/>
         </div>
       );
     } else {

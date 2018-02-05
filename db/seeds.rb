@@ -21,7 +21,7 @@ Station.create(
 Station.create(
   station_name: "BTS",
   description: "BTS, also known as the Bangtan Boys, is a seven-member South Korean boy band formed by Big Hit Entertainment. They debuted on June 12, 2013 with the song 'No More Dream' from their first album 2 Cool 4 Skool.",
-  image_url: "https://i.imgur.com/Kujwdu9.jpg",
+  image_url: "https://i.imgur.com/HdFyFqS.jpg",
   user_id: user.id
 )
 
