@@ -98,7 +98,7 @@ station9 = Station.create(
 )
 
 station9.image = URI.parse("https://i.imgur.com/ozRBsJ8.jpg")
-station.save!
+station9.save!
 
 station10 = Station.create(
   station_name: "Apink",
@@ -108,4 +108,4 @@ station10 = Station.create(
 )
 
 station10.image = URI.parse("https://i.imgur.com/bLmnr79.jpg")
-station.save!
+station10.save!
