@@ -14,12 +14,12 @@
 #
 
 class Track < ApplicationRecord
-  validates :title, :ord, :image_url, :song_url, :album_id, presence: true
+  validates :title, :ord, :image_url, :song_url, presence: true
 
-  belongs_to :album,
-    primary_key: :id,
-    foreign_key: :album_id,
-    class_name: :Album
+  # belongs_to :album,
+  #   primary_key: :id,
+  #   foreign_key: :album_id,
+  #   class_name: :Album
 
   has_many :tags,
     primary_key: :id,

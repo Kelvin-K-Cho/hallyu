@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :stations, except: [:new, :edit]
     end
     resource :session, only: [:create, :destroy]
+    resources :tracks, only: [:index]
   end
 
   root "static_pages#root"
