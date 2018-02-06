@@ -13,11 +13,12 @@ import NavBarContainer from './navbar/navbar_container';
 import StationIndexContainer from './station/station_index_container';
 import StationShowContainer from './station/station_show_container';
 import StationFormContainer from './station/station_form_container';
+import MediaBarContainer from './mediabar/mediabar_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route';
 import Home from './home/home';
 
 export default () => (
-  <div>
+  <div className="app-main-container">
     <header>
       <Route path='/' component={NavBarContainer}/>
     </header>
@@ -31,5 +32,8 @@ export default () => (
       <ProtectedRoute exact path="/stations/:stationId/edit" component={StationFormContainer} />
       <Redirect to="/" />
     </Switch>
+    <footer>
+      <ProtectedRoute path='/' component={MediaBarContainer} />
+    </footer>
   </div>
 );

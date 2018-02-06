@@ -1,0 +1,17 @@
+#audioplayer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 100%;
+  -webkit-appearance:none;
+}
+
+#audio-bar {
+  height: 100%;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #0252d6;
+  height: 55px;
+}
