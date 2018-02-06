@@ -11,7 +11,8 @@ class StationForm extends React.Component {
       station_name: '',
       description: '',
       imageFile: null,
-      imageUrl: null
+      imageUrl: null,
+      imageLoaded: false
     };
   }
 
@@ -42,6 +43,9 @@ class StationForm extends React.Component {
     }.bind(this);
     if (file) {
       fileReader.readAsDataURL(file);
+      this.setState({
+        imageLoaded: true
+      });
     }
   }
 
@@ -67,6 +71,12 @@ class StationForm extends React.Component {
 
   render() {
     const text = this.props.formType === 'new' ? "Create Station" : "Update Station";
+    let image;
+    if (this.state.imageLoaded) {
+      image = <img id="form-preview" src={this.state.imageUrl}/>;
+    } else {
+      image = <img/>;
+    }
     if (this.props.location.pathname === '/stations/new') {
       return (
         <div id="form-container">
@@ -96,9 +106,7 @@ class StationForm extends React.Component {
              &nbsp;
              &nbsp;
             <input id="form-button" type="submit" value='Save'/>
-            <div id='form-preview-parent'>
-              <img id="form-preview" src={this.state.imageUrl}/>
-            </div>
+            {image}
           </form>
         </div>
       );
@@ -132,9 +140,7 @@ class StationForm extends React.Component {
            &nbsp;
            &nbsp;
           <input id="form-button" type="submit" value='Save'/>
-          <div id='form-preview-parent'>
-            <img id="form-preview" src={this.state.imageUrl}/>
-          </div>
+          {image}
         </form>
       </div>
     );
