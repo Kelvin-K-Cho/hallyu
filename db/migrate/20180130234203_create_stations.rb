@@ -3,7 +3,6 @@ class CreateStations < ActiveRecord::Migration[5.1]
     create_table :stations do |t|
       t.string :station_name, null: false
       t.text :description
-      t.text :image_url
       t.integer :user_id, null: false
 
       t.timestamps

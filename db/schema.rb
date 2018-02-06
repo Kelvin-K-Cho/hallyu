@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20180205182920) do
   create_table "stations", force: :cascade do |t|
     t.string "station_name", null: false
     t.text "description"
-    t.string "image_url"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -73,6 +72,7 @@ ActiveRecord::Schema.define(version: 20180205182920) do
     t.string "lyrics"
     t.integer "ord", null: false
     t.string "image_url", null: false
+    t.string "song_url", null: false
     t.integer "album_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

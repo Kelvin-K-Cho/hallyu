@@ -10,7 +10,6 @@ class StationForm extends React.Component {
     this.state = {
       station_name: '',
       description: '',
-      image_url: '',
       imageFile: null,
       imageUrl: null
     };
@@ -51,7 +50,6 @@ class StationForm extends React.Component {
     const formData = new FormData();
     formData.append("station[station_name]", this.state.station_name);
     formData.append("station[description]", this.state.description);
-    formData.append("station[image_url]", this.state.image_url);
     const station = Object.assign({}, this.state);
     let file = this.state.imageFile;
     if (file) {
@@ -85,17 +83,12 @@ class StationForm extends React.Component {
                 onChange={this.update("description")}
                 id="form-textarea"
                 />
-            <div id="form-image">Image Url:</div>
-              <input
-                onChange={this.update("image_url")}
-                id="form-input"
-                />
-              <div id="form-image-upload">Image Upload:</div>
+              <div id="form-image">Image Upload:</div>
               <input
                 type='file'
                 onChange={this.updateFile}
+                id="form-input"
                 />
-              <img src={this.state.imageUrl}/>
             <br/>
             <Link to={'/stations'}>
               <button id='form-cancel'>Cancel</button>
@@ -103,6 +96,9 @@ class StationForm extends React.Component {
              &nbsp;
              &nbsp;
             <input id="form-button" type="submit" value='Save'/>
+            <div id='form-preview-parent'>
+              <img id="form-preview" src={this.state.imageUrl}/>
+            </div>
           </form>
         </div>
       );
@@ -124,25 +120,21 @@ class StationForm extends React.Component {
               onChange={this.update("description")}
               id="form-textarea"
               />
-          <div id="form-image">Image Url:</div>
-            <input
-              value={this.state.image_url}
-              onChange={this.update("image_url")}
-              id="form-input"
-              />
-          <div id="form-image-upload">Image Upload:</div>
+            <div id="form-image">Image Upload:</div>
             <input
               type='file'
               onChange={this.updateFile}
+              id="form-input"
               />
-              <img src={this.state.imageUrl}/>
-            <br/>
           <Link to={`/stations/${this.state.id}`}>
             <button id='form-cancel'>Cancel</button>
           </Link>
            &nbsp;
            &nbsp;
           <input id="form-button" type="submit" value='Save'/>
+          <div id='form-preview-parent'>
+            <img id="form-preview" src={this.state.imageUrl}/>
+          </div>
         </form>
       </div>
     );

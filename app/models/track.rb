@@ -7,13 +7,14 @@
 #  lyrics     :string
 #  ord        :integer          not null
 #  image_url  :string           not null
+#  song_url   :string           not null
 #  album_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 class Track < ApplicationRecord
-  validates :title, :ord, :image_url, :album_id, presence: true
+  validates :title, :ord, :image_url, :song_url, :album_id, presence: true
 
   belongs_to :album,
     primary_key: :id,

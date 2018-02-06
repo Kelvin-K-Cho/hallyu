@@ -156,7 +156,21 @@
 }
 
 #form-image {
-  padding-right: 430px;
+  padding-right: 398px;
+}
+
+#form-preview-parent {
+  display:none;
+  overflow: hidden;
+}
+
+#form-preview {
+  width: 500px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: #386aff;
+  background-image: url("http://www.cityrider.com/fixed/43aspect.png");
 }
 
 #form-input {
