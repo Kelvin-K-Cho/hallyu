@@ -14,6 +14,9 @@
 class Station < ApplicationRecord
   validates :station_name, :image_url, presence: true
 
+  has_attached_file :image, default_url: "default_station.jpg"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,

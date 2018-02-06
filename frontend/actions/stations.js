@@ -32,14 +32,14 @@ export const fetchStation = (userId, id) => dispatch => (
     err => dispatch(receiveErrors(err.responseJSON)))
 );
 
-export const createStation = (userId, id) => dispatch => (
-  StationAPIUtil.createStation(userId, id).then(
+export const createStation = (userId, station) => dispatch => (
+  StationAPIUtil.createStation(userId, station).then(
     station => { dispatch(receiveStation(station)); dispatch(clearErrors());},
     err => dispatch(receiveErrors(err.responseJSON)))
 );
 
-export const updateStation = (userId, id) => dispatch => (
-  StationAPIUtil.updateStation(userId, id).then(
+export const updateStation = (userId, station) => dispatch => (
+  StationAPIUtil.updateStation(userId, station).then(
     station => { dispatch(receiveStation(station)); dispatch(clearErrors());},
     err => dispatch(receiveErrors(err.responseJSON)))
 );

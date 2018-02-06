@@ -12,21 +12,33 @@ export const fetchStation = (userId, id) => (
   })
 );
 
-export const createStation = (userId, station) => (
+export const createStation = (userId, formData) => (
   $.ajax({
     method: 'POST',
     url: `api/users/${userId}/stations`,
-    data: { station }
+    data: formData,
+    dataType: 'json',
+    processData: false,
+    contentType: false
   })
 );
 
-export const updateStation = (userId, station) => (
-  $.ajax({
+export const updateStation = (userId, formData) => {
+  let id;
+  for (let key of formData.keys()) {
+    if (key === "station[id]") {
+      id = formData.get(key);
+    }
+  }
+  return $.ajax({
     method: 'PATCH',
-    url: `api/users/${userId}/stations/${station.id}`,
-    data: { station }
-  })
-);
+    url: `api/users/${userId}/stations/${id}`,
+    data: formData,
+    dataType: 'json',
+    processData: false,
+    contentType: false
+  });
+};
 
 export const deleteStation = (userId, id) => (
   $.ajax({
