@@ -4,6 +4,7 @@ import { receiveErrors, clearErrors } from './errors';
 export const RECEIVE_ALL_STATIONS = "RECEIVE_ALL_STATIONS";
 export const RECEIVE_STATION = "RECEIVE_STATION";
 export const REMOVE_STATION = "REMOVE_STATION";
+export const PLAY_STATION = "PLAY_STATION";
 
 const receiveAllStations = stations => ({
   type: RECEIVE_ALL_STATIONS,
@@ -34,13 +35,13 @@ export const fetchStation = (userId, id) => dispatch => (
 
 export const createStation = (userId, station) => dispatch => (
   StationAPIUtil.createStation(userId, station).then(
-    station => { dispatch(receiveStation(station)); dispatch(clearErrors());},
+    serverStation => { dispatch(receiveStation(serverStation)); dispatch(clearErrors());},
     err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const updateStation = (userId, station) => dispatch => (
   StationAPIUtil.updateStation(userId, station).then(
-    station => { dispatch(receiveStation(station)); dispatch(clearErrors());},
+    serverStation => { dispatch(receiveStation(serverStation)); dispatch(clearErrors());},
     err => dispatch(receiveErrors(err.responseJSON)))
 );
 

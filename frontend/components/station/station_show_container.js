@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchStation: (userId, id) => dispatch(fetchStation(userId, id)),
-  deleteStation: (userId, stationId) => dispatch(deleteStation(userId, stationId))
+  deleteStation: (userId, stationId) => dispatch(deleteStation(userId, stationId)),
 });
 
 export default connect(

@@ -1,15 +1,21 @@
 import { connect } from 'react-redux';
 import { fetchTrack, fetchTracks } from '../../actions/tracks';
+import { togglePlay, toggleRepeat, toggleMute, nextTrack } from '../../actions/audio';
 import MediaBar from "./mediabar";
 
-const mapStateToProps = (state) => ({
-  track: state.entities.tracks[1],
-  tracks: state.entities.tracks,
-});
+const mapStateToProps = (state) => {
+  return {
+    audio: state.entities.audio,
+    tracks: state.entities.tracks
+};};
 
 const mapDispatchToProps = (dispatch) => ({
   fetchTrack: (id) => dispatch(fetchTrack(id)),
-  fetchTracks: () => dispatch(fetchTracks())
+  fetchTracks: () => dispatch(fetchTracks()),
+  togglePlay: () => dispatch(togglePlay()),
+  toggleMute: () => dispatch(toggleMute()),
+  toggleRepeat: () => dispatch(toggleRepeat()),
+  nextTrack: () => dispatch(nextTrack())
 });
 
 export default connect(

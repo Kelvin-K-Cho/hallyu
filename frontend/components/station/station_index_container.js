@@ -2,8 +2,11 @@ import { connect } from 'react-redux';
 import StationIndex from './station_index';
 import {
   fetchStations,
-  deleteStation
+  deleteStation,
 } from '../../actions/stations';
+import {
+  fetchTracks
+} from '../../actions/tracks';
 import { selectStations } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
@@ -13,7 +16,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchStations: (userId) => dispatch(fetchStations(userId)),
-  deleteStation: (userId, stationId) => dispatch(deleteStation(userId, stationId))
+  deleteStation: (userId, stationId) => dispatch(deleteStation(userId, stationId)),
+  fetchTracks: () => dispatch(fetchTracks())
 });
 
 export default connect(

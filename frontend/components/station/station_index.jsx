@@ -21,6 +21,7 @@ class StationIndex extends React.Component {
                deleteStation={this.props.deleteStation}
                currentUser={this.props.currentUser}
                stationId={station.id}
+               fetchTracks={this.props.fetchTracks}
                />
             ))
           }
