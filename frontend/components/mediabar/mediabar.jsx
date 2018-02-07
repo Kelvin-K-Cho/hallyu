@@ -3,29 +3,42 @@ import React from 'react';
 class MediaBar extends React.Component {
   constructor(props) {
     super(props);
+
+    this.playAudio = this.playAudio.bind(this);
+    this.pauseAudio = this.pauseAudio.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchTracks();
   }
 
+  playAudio() {
+    this.audio.play();
+  }
+
+  pauseAudio() {
+    this.audio.pause();
+  }
+
   render() {
-    let audioplayer;
+    let trackUrl = '/';
     if (this.props.track) {
-      audioplayer = <audio id="audioplayer" controlsList="nodownload" controls src={this.props.track.song_url}/>;
+      trackUrl = this.props.track.song_url;
     }
-    if (audioplayer) {
-      return (
-        <div id="audio-bar">
-          {audioplayer}
+    return (
+      <div id="audioplayer">
+        <audio
+          ref={(audio) => { this.audio = audio; }}
+          src={trackUrl}>
+        </audio>
+        <div onClick={this.playAudio}>
+          <i class="fas fa-play"></i>
         </div>
-      );
-    } else {
-      return (
-        <div>
+        <div onClick={this.pauseAudio}>
+          <i class="fas fa-pause"></i>
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
