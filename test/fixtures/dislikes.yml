@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: dislikes
 #
 #  id         :integer          not null, primary key
 #  station_id :integer          not null

@@ -25,13 +25,22 @@ class Station < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-  has_many :tags,
+  has_many :dislikes,
     primary_key: :id,
     foreign_key: :station_id,
-    class_name: :Tag
+    class_name: :Dislike
 
-  has_many :tracks,
-    through: :tags,
+  has_many :likes,
+    primary_key: :id,
+    foreign_key: :station_id,
+    class_name: :Like
+
+  has_many :track_dislikes,
+    through: :dislikes,
+    source: :track
+
+  has_many :track_likes,
+    through: :likes,
     source: :track
 
 end

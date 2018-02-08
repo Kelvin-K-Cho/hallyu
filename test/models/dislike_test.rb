@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: dislikes
 #
 #  id         :integer          not null, primary key
 #  station_id :integer          not null
@@ -9,12 +9,10 @@
 #  updated_at :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+require 'test_helper'
 
-one:
-  station_id: 1
-  track_id: 1
-
-two:
-  station_id: 1
-  track_id: 1
+class DislikeTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

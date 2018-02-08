@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: dislikes
 #
 #  id         :integer          not null, primary key
 #  station_id :integer          not null
@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class Like < ApplicationRecord
+class Dislike < ApplicationRecord
 
   validates :station_id, :track_id, presence: true
 

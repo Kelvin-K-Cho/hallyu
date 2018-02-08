@@ -8,7 +8,6 @@
 #  ord        :integer          not null
 #  image_url  :string           not null
 #  song_url   :string           not null
-#  album_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -21,13 +20,22 @@ class Track < ApplicationRecord
   #   foreign_key: :album_id,
   #   class_name: :Album
 
-  has_many :tags,
+  has_many :dislikes,
     primary_key: :id,
     foreign_key: :track_id,
-    class_name: :Track
+    class_name: :Dislike
 
-  has_many :stations,
-    through: :tags,
+  has_many :likes,
+    primary_key: :id,
+    foreign_key: :track_id,
+    class_name: :Like
+
+  has_many :station_dislikes,
+    through: :dislikes,
+    source: :station
+
+  has_many :station_likes,
+    through: :likes,
     source: :station
 
 end
