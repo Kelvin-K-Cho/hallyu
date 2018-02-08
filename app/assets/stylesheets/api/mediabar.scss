@@ -43,9 +43,9 @@
   justify-content: space-around;
   align-content: center;
   align-items: center;
-  margin-right: 450px;
   color: white;
   outline: none;
+  margin-right: 340px;
 }
 
 #button-repeat {
@@ -54,6 +54,20 @@
 
 #button-next {
   font-size: 10px;
+}
+
+#mute-button {
+  position: absolute;
+  margin-left: 450px;
+}
+
+#volume {
+  display: inline-block;
+}
+
+#volume-bar {
+  margin-top: 28px;
+  margin-right: 20px;
 }
 
 #text-timer {

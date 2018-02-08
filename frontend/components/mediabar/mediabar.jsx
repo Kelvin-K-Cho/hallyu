@@ -18,6 +18,7 @@ class MediaBar extends React.Component {
     this.setEnd = this.setEnd.bind(this);
     this.getCurrentTime = this.getCurrentTime.bind(this);
     this.getDuration = this.getDuration.bind(this);
+    this.setVolume = this.setVolume.bind(this);
   }
 
   componentDidMount() {
@@ -114,6 +115,18 @@ class MediaBar extends React.Component {
     });
   }
 
+  setVolume(event){
+    if (this.props.audio.currentTrack) {
+      let volume = event.target.value;
+      this.audio.volume = volume;
+      this.setState({
+        volume
+      });
+    } else {
+      return;
+    }
+  }
+
   render() {
     let trackUrl = '/';
 
@@ -193,8 +206,13 @@ class MediaBar extends React.Component {
           <span id="button-next" onClick={this.props.nextTrack}>
             <i className="fas fa-fast-forward fa-2x next-button"></i>
           </span>
-          {muteOn}
-          {muteOff}
+          <div id="mute-button">
+            {muteOn}
+            {muteOff}
+          </div>
+        </div>
+        <div id="volume">
+          <input id="volume-bar" onChange={this.setVolume} type="range" min={0} max={1} step="any" value={this.state.volume}></input>
         </div>
         <span id="text-timer">
           {this.parseTime(this.state.currentTime)}&nbsp;&nbsp;|&nbsp;&nbsp;{this.parseTime(this.state.duration)}
