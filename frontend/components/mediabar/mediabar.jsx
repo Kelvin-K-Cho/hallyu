@@ -197,6 +197,10 @@ class MediaBar extends React.Component {
       trackImage = <img/>;
     }
 
+    let style = {
+      width: `${this.setSlider() * 100}%`
+    };
+
     return (
       <div id="audioplayer">
         <audio
@@ -212,6 +216,7 @@ class MediaBar extends React.Component {
           {this.props.audio.song_name}
         </span>
         <div id="slider">
+          <div style={style} id="slider-currentTime"></div>
           <input id="slider-bar" type="range" min={0} max={1} step="any" value={this.setSlider()}></input>
         </div>
         <div id="media-buttons">

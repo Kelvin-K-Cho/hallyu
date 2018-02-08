@@ -73,7 +73,7 @@ class NavBar extends React.Component {
             &nbsp;
             &nbsp;
             <div id="now-playing">
-              Now Playing{station}
+              Current Station{station}
             </div>
             <ErrorList errors={ this.props.errors } />
             <div>
