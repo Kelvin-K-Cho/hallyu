@@ -182,6 +182,12 @@ class MediaBar extends React.Component {
           onEnded={this.setEnd}
           >
         </audio>
+        <img
+          src={this.props.audio.song_image}
+          />
+        <div id='media-title'>
+          {this.props.audio.song_name}
+        </div>
         <div>
           <input type="range" min={0} max={1} step="any" value={this.setSlider()}></input>
         </div>

@@ -97,7 +97,7 @@ class StationForm extends React.Component {
               <input
                 type='file'
                 onChange={this.updateFile}
-                id="form-input"
+                id="form-input-image"
                 />
             <br/>
             <Link to={'/stations'}>
@@ -132,7 +132,7 @@ class StationForm extends React.Component {
             <input
               type='file'
               onChange={this.updateFile}
-              id="form-input"
+              id="form-input-image"
               />
           <Link to={`/stations/${this.state.id}`}>
             <button id='form-cancel'>Cancel</button>

@@ -7,6 +7,9 @@ import {
 import {
   fetchTracks
 } from '../../actions/tracks';
+import {
+  setStation
+} from '../../actions/ui';
 import { selectStations } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
@@ -17,7 +20,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchStations: (userId) => dispatch(fetchStations(userId)),
   deleteStation: (userId, stationId) => dispatch(deleteStation(userId, stationId)),
-  fetchTracks: () => dispatch(fetchTracks())
+  fetchTracks: () => dispatch(fetchTracks()),
+  setStation: (station) => dispatch(setStation(station))
 });
 
 export default connect(

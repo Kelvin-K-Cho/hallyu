@@ -67,6 +67,11 @@ class NavBar extends React.Component {
           <Link id="link-stations" to={"/stations"}>
             My Stations
           </Link>
+          &nbsp;
+          &nbsp;
+          <div id="now-playing">
+            Now Playing
+          </div>
           <ErrorList errors={ this.props.errors } />
           <div>
             {display}
