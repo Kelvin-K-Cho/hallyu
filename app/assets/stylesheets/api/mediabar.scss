@@ -2,8 +2,9 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  height: auto;
+  height: 100%;
   width: 100%;
+  background-color: #224099;
 }
 
 #preview-track-image {
@@ -33,9 +34,31 @@
   top: 0;
 }
 
-#timer {
-  margin-top: 20px;
+#media-buttons {
+  width:45%;
+  text-align: center;
+  display:flex;
+  flex-direction: row;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  margin-right: 450px;
   color: white;
-  float: right;
+  outline: none;
+}
+
+#button-repeat {
+  font-size: 10px;
+}
+
+#button-next {
+  font-size: 10px;
+}
+
+#text-timer {
+  margin-top: 30px;
+  margin-right: 20px;
+  color: white;
   font-size: 12px;
 }

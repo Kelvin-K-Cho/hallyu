@@ -8,15 +8,12 @@ class MediaBar extends React.Component {
       muted: false,
       duration: 0,
       currentTime: 0,
-      played: 0
     };
     this.playAudio = this.playAudio.bind(this);
     this.pauseAudio = this.pauseAudio.bind(this);
     this.muteAudio = this.muteAudio.bind(this);
     this.repeatAudio = this.repeatAudio.bind(this);
     this.parseTime = this.parseTime.bind(this);
-    this.setDuration = this.setDuration.bind(this);
-    this.setCurrentTime = this.setCurrentTime.bind(this);
     this.setSlider = this.setSlider.bind(this);
     this.setEnd = this.setEnd.bind(this);
     this.getCurrentTime = this.getCurrentTime.bind(this);
@@ -47,20 +44,6 @@ class MediaBar extends React.Component {
       nextProps.nextTrack();
       }
     }
-  }
-
-  setDuration () {
-    let duration = this.parseTime(this.audio.duration);
-    this.setState({
-      duration: duration
-    });
-  }
-
-  setCurrentTime() {
-    let currentTime = this.parseTime(this.audio.currentTime);
-    this.setState({
-      currentTime: currentTime
-    });
   }
 
   setSlider() {
@@ -201,19 +184,21 @@ class MediaBar extends React.Component {
         <div id="slider">
           <input id="slider-bar" type="range" min={0} max={1} step="any" value={this.setSlider()}></input>
         </div>
-        <span id="button-repeat" onClick={this.repeatAudio}>
-          <i className="fas fa-redo-alt fa-2x repeat"></i>
-        </span>
-        {playButton}
-        {pauseButton}
-        <span id="button-next" onClick={this.props.nextTrack}>
-          <i className="fas fa-fast-forward fa-2x next-button"></i>
-        </span>
-        {muteOn}
-        {muteOff}
-        <div id="timer">
-          <span>{this.parseTime(this.state.currentTime)} | {this.parseTime(this.state.duration)}</span>
+        <div id="media-buttons">
+          <span id="button-repeat" onClick={this.repeatAudio}>
+            <i className="fas fa-redo-alt fa-2x repeat"></i>
+          </span>
+          {playButton}
+          {pauseButton}
+          <span id="button-next" onClick={this.props.nextTrack}>
+            <i className="fas fa-fast-forward fa-2x next-button"></i>
+          </span>
+          {muteOn}
+          {muteOff}
         </div>
+        <span id="text-timer">
+          {this.parseTime(this.state.currentTime)}&nbsp;&nbsp;|&nbsp;&nbsp;{this.parseTime(this.state.duration)}
+        </span>
       </div>
     );
   }
