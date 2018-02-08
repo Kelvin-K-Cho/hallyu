@@ -168,6 +168,23 @@ class MediaBar extends React.Component {
       muteOff = null;
     }
 
+    let toggleOn;
+    let toggleOff;
+
+    if (this.props.audio.repeat) {
+      toggleOff =
+      <span id="button-repeat-off" onClick={this.repeatAudio}>
+        <i className="fas fa-redo-alt fa-2x repeat"></i>
+      </span>;
+      toggleOn = null;
+    } else {
+      toggleOn =
+      <span id="button-repeat-on" onClick={this.repeatAudio}>
+        <i className="fas fa-redo-alt fa-2x repeat"></i>
+      </span>;
+      toggleOff = null;
+    }
+
     let trackImage;
 
     if (this.props.audio.song_image) {
@@ -198,9 +215,8 @@ class MediaBar extends React.Component {
           <input id="slider-bar" type="range" min={0} max={1} step="any" value={this.setSlider()}></input>
         </div>
         <div id="media-buttons">
-          <span id="button-repeat" onClick={this.repeatAudio}>
-            <i className="fas fa-redo-alt fa-2x repeat"></i>
-          </span>
+          {toggleOn}
+          {toggleOff}
           {playButton}
           {pauseButton}
           <span id="button-next" onClick={this.props.nextTrack}>
