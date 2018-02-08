@@ -6,7 +6,8 @@ import { clearErrors } from '../../actions/errors';
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   path: ownProps.location.pathname,
-  errors: state.errors
+  errors: state.errors,
+  currentStation: state.ui.stationName
 });
 
 const mapDispatchToProps = (dispatch) => {

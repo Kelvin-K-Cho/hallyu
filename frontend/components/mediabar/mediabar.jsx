@@ -143,13 +143,13 @@ class MediaBar extends React.Component {
 
     if (this.props.audio.playing) {
       pauseButton =
-        <div onClick={this.pauseAudio}>
+        <div id="button-pause" onClick={this.pauseAudio}>
           <i className="fas fa-pause"></i>
         </div>;
       playButton = null;
     } else {
       playButton =
-      <div onClick={this.playAudio}>
+      <div id="button-play" onClick={this.playAudio}>
         <i className="fas fa-play"></i>
       </div>;
       pauseButton = null;
@@ -160,16 +160,28 @@ class MediaBar extends React.Component {
 
     if (this.props.audio.mute) {
       muteOff =
-      <div onClick={this.muteAudio}>
+      <div id="button-mute-off" onClick={this.muteAudio}>
         <i className="fas fa-volume-off mute"></i>
       </div>;
       muteOn = null;
     } else {
       muteOn =
-      <div onClick={this.muteAudio}>
+      <div id="button-mute-on" onClick={this.muteAudio}>
         <i className="fas fa-volume-up volume"></i>
       </div>;
       muteOff = null;
+    }
+
+    let trackImage;
+
+    if (this.props.audio.song_image) {
+      trackImage =
+      <img
+        id='preview-track-image'
+        src={this.props.audio.song_image}
+      />;
+    } else {
+      trackImage = <img/>;
     }
 
     return (
@@ -182,28 +194,25 @@ class MediaBar extends React.Component {
           onEnded={this.setEnd}
           >
         </audio>
-        <img
-          src={this.props.audio.song_image}
-          />
-        <div id='media-title'>
+        {trackImage}
+        <span id='media-title'>
           {this.props.audio.song_name}
+        </span>
+        <div id="slider">
+          <input id="slider-bar" type="range" min={0} max={1} step="any" value={this.setSlider()}></input>
         </div>
-        <div>
-          <input type="range" min={0} max={1} step="any" value={this.setSlider()}></input>
-        </div>
-        <div onClick={this.repeatAudio}>
+        <span id="button-repeat" onClick={this.repeatAudio}>
           <i className="fas fa-redo-alt fa-2x repeat"></i>
-        </div>
+        </span>
         {playButton}
         {pauseButton}
-        <div onClick={this.props.nextTrack}>
+        <span id="button-next" onClick={this.props.nextTrack}>
           <i className="fas fa-fast-forward fa-2x next-button"></i>
-        </div>
+        </span>
         {muteOn}
         {muteOff}
-        <div>
-          <span>{this.parseTime(this.state.currentTime)} | </span>
-          <span>{this.parseTime(this.state.duration)}</span>
+        <div id="timer">
+          <span>{this.parseTime(this.state.currentTime)} | {this.parseTime(this.state.duration)}</span>
         </div>
       </div>
     );

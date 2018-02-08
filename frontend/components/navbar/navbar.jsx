@@ -51,6 +51,8 @@ class NavBar extends React.Component {
       );
     }
 
+    let station = `: ${this.props.currentStation}`;
+
     if (!this.props.currentUser) {
       return (
         <header className="nav-bar">
@@ -62,22 +64,41 @@ class NavBar extends React.Component {
         </header>
       );
     } else {
-      return (
-        <header className="nav-bar">
-          <Link id="link-stations" to={"/stations"}>
-            My Stations
-          </Link>
-          &nbsp;
-          &nbsp;
-          <div id="now-playing">
-            Now Playing
-          </div>
-          <ErrorList errors={ this.props.errors } />
-          <div>
-            {display}
-          </div>
-        </header>
-      );
+      if (this.props.currentStation) {
+        return (
+          <header className="nav-bar">
+            <Link id="link-stations" to={"/stations"}>
+              My Stations
+            </Link>
+            &nbsp;
+            &nbsp;
+            <div id="now-playing">
+              Now Playing{station}
+            </div>
+            <ErrorList errors={ this.props.errors } />
+            <div>
+              {display}
+            </div>
+          </header>
+        );
+      } else {
+        return (
+          <header className="nav-bar">
+            <Link id="link-stations" to={"/stations"}>
+              My Stations
+            </Link>
+            &nbsp;
+            &nbsp;
+            <div id="now-playing">
+              Now Playing
+            </div>
+            <ErrorList errors={ this.props.errors } />
+            <div>
+              {display}
+            </div>
+          </header>
+        );
+      }
     }
   }
 }
