@@ -6,7 +6,8 @@ import MediaBar from "./mediabar";
 const mapStateToProps = (state) => {
   return {
     audio: state.entities.audio,
-    tracks: state.entities.tracks
+    tracks: state.entities.tracks,
+    ui: state.entities.ui
 };};
 
 const mapDispatchToProps = (dispatch) => ({

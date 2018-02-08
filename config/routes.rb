@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy]
     resources :tracks, only: [:index, :show]
+    resources :likes, only: [:index, :show, :create, :destroy]
+    resources :dislikes, only: [:index, :show, :create, :destroy]
   end
 
   root "static_pages#root"

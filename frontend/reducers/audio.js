@@ -24,7 +24,7 @@ export default (state = initialState, action) => {
       tracksList = Object.keys(action.tracks);
       newState = merge({}, state);
       newState['queue'] = shuffle(Object.values(action.tracks));
-      newState['currentTrack'] = tracksList[0];
+      newState['currentTrack'] = newState['queue'][0].id;
       newState['song_url'] = newState['queue'][0].song_url;
       newState['song_name'] = newState['queue'][0].title;
       newState['song_image'] = newState['queue'][0].image_url;

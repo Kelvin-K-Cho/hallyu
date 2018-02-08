@@ -4,7 +4,6 @@ import { receiveErrors, clearErrors } from './errors';
 export const RECEIVE_ALL_STATIONS = "RECEIVE_ALL_STATIONS";
 export const RECEIVE_STATION = "RECEIVE_STATION";
 export const REMOVE_STATION = "REMOVE_STATION";
-export const PLAY_STATION = "PLAY_STATION";
 
 const receiveAllStations = stations => ({
   type: RECEIVE_ALL_STATIONS,

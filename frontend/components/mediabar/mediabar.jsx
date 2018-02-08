@@ -185,6 +185,9 @@ class MediaBar extends React.Component {
       toggleOff = null;
     }
 
+    let likeOn;
+    let likeOff;
+
     let trackImage;
 
     if (this.props.audio.song_image) {

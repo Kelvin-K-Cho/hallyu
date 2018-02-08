@@ -8,6 +8,8 @@
 
 User.destroy_all
 Station.destroy_all
+Like.destroy_all
+Dislike.destroy_all
 
 user = User.create(email: "pandora", password: "secret")
 
@@ -20,32 +22,52 @@ station1 = Station.create(
 station1.image = URI.parse("https://i.imgur.com/ljkM9TX.jpg")
 station1.save!
 
-Track.create(
+track1 = Track.create(
   title: 'Cheer Up',
   song_url: 'https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Twice+-+Cheer+Up.mp3',
   image_url: "https://i.imgur.com/ljkM9TX.jpg",
   ord: 1
 )
 
-Track.create(
+track2 = Track.create(
   title: 'Like OOH-AHH',
   song_url: 'https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Twice+-+Like+OOH-AHH.mp3',
   image_url: "https://i.imgur.com/ljkM9TX.jpg",
   ord: 1
 )
 
-Track.create(
+track3 = Track.create(
   title: 'Likey',
   song_url: 'https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Twice+-+Likey.mp3',
   image_url: "https://i.imgur.com/ljkM9TX.jpg",
   ord: 1
 )
 
-Track.create(
+track4 = Track.create(
   title: 'TT',
   song_url: 'https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Twice+-+TT.mp3',
   image_url: "https://i.imgur.com/ljkM9TX.jpg",
   ord: 1
+)
+
+Like.create(
+  station_id: station1.id,
+  track_id: track1.id
+)
+
+Like.create(
+  station_id: station1.id,
+  track_id: track2.id
+)
+
+Like.create(
+  station_id: station1.id,
+  track_id: track3.id
+)
+
+Like.create(
+  station_id: station1.id,
+  track_id: track4.id
 )
 
 station2 = Station.create(
@@ -58,32 +80,52 @@ station2 = Station.create(
 station2.image = URI.parse("https://i.imgur.com/HdFyFqS.jpg")
 station2.save!
 
-Track.create(
+track5 = Track.create(
   title: 'DNA',
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/BTS+-+DNA.mp3",
   image_url: "https://i.imgur.com/HdFyFqS.jpg",
   ord: 1
 )
 
-Track.create(
+track6 = Track.create(
   title: 'Dope',
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/BTS+-+Dope.mp3",
   image_url: "https://i.imgur.com/HdFyFqS.jpg",
   ord: 1
 )
 
-Track.create(
+track7 = Track.create(
   title: 'Fire',
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/BTS+-+Fire.mp3",
   image_url: "https://i.imgur.com/HdFyFqS.jpg",
   ord: 1
 )
 
-Track.create(
+track8 = Track.create(
   title: 'Go Go',
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/BTS+-+Go+Go.mp3",
   image_url: "https://i.imgur.com/HdFyFqS.jpg",
   ord: 1
+)
+
+Like.create(
+  station_id: station2.id,
+  track_id: track5.id
+)
+
+Like.create(
+  station_id: station2.id,
+  track_id: track6.id
+)
+
+Like.create(
+  station_id: station2.id,
+  track_id: track7.id
+)
+
+Like.create(
+  station_id: station2.id,
+  track_id: track8.id
 )
 
 station3 = Station.create(
@@ -96,32 +138,52 @@ station3 = Station.create(
 station3.image = URI.parse("https://i.imgur.com/VP1luUk.jpg")
 station3.save!
 
-Track.create(
+track9 = Track.create(
   title: 'Fingertip',
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/GFriend+-+Fingertip.mp3",
   image_url: "https://i.imgur.com/VP1luUk.jpg",
   ord: 1
 )
 
-Track.create(
+track10 = Track.create(
   title: 'Me Gustas Tu',
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/GFriend+-+Me+Gustas+Tu.mp3",
   image_url: "https://i.imgur.com/VP1luUk.jpg",
   ord: 1
 )
 
-Track.create(
+track11 = Track.create(
   title: 'Navillera',
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/GFriend+-+Navillera.mp3",
   image_url: "https://i.imgur.com/VP1luUk.jpg",
   ord: 1
 )
 
-Track.create(
+track12 = Track.create(
   title: 'Rough',
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/GFriend+-+Rough.mp3",
   image_url: "https://i.imgur.com/VP1luUk.jpg",
   ord: 1
+)
+
+Like.create(
+  station_id: station3.id,
+  track_id: track9.id
+)
+
+Like.create(
+  station_id: station3.id,
+  track_id: track10.id
+)
+
+Like.create(
+  station_id: station3.id,
+  track_id: track11.id
+)
+
+Like.create(
+  station_id: station3.id,
+  track_id: track12.id
 )
 
 station4 = Station.create(
@@ -134,18 +196,28 @@ station4 = Station.create(
 station4.image = URI.parse("https://i.imgur.com/0f80Ah1.jpg")
 station4.save!
 
-Track.create(
+track13 = Track.create(
   title: 'Monster',
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Exo+-+Monster.mp3",
   image_url: "https://i.imgur.com/0f80Ah1.jpg",
   ord: 1
 )
 
-Track.create(
+track14 = Track.create(
   title: 'Power',
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Exo+-+Power.mp3",
   image_url: "https://i.imgur.com/0f80Ah1.jpg",
   ord: 1
+)
+
+Like.create(
+  station_id: station4.id,
+  track_id: track13.id
+)
+
+Like.create(
+  station_id: station4.id,
+  track_id: track14.id
 )
 
 station5 = Station.create(
@@ -158,25 +230,40 @@ station5 = Station.create(
 station5.image = URI.parse("https://i.imgur.com/LxYsrUs.jpg")
 station5.save!
 
-Track.create(
+track15 = Track.create(
   title: "As If It's Your Last",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Black+Pink+-+As+If+It's+Your+Last.mp3",
   image_url: "https://i.imgur.com/LxYsrUs.jpg",
   ord: 1
 )
 
-Track.create(
+track16 = Track.create(
   title: "Boombayah",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Black+Pink+-+Boombayah.mp3",
   image_url: "https://i.imgur.com/LxYsrUs.jpg",
   ord: 1
 )
 
-Track.create(
+track17 = Track.create(
   title: "Playing With Fire",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Black+Pink+-+Playing+With+Fire.mp3",
   image_url: "https://i.imgur.com/LxYsrUs.jpg",
   ord: 1
+)
+
+Like.create(
+  station_id: station5.id,
+  track_id: track15.id
+)
+
+Like.create(
+  station_id: station5.id,
+  track_id: track16.id
+)
+
+Like.create(
+  station_id: station5.id,
+  track_id: track17.id
 )
 
 station6 = Station.create(
@@ -189,18 +276,28 @@ station6 = Station.create(
 station6.image = URI.parse("https://i.imgur.com/0zlqy2f.jpg")
 station6.save!
 
-Track.create(
+track18 = Track.create(
   title: "Bang Bang Bang",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Big+Bang+-+Bang+Bang+Bang.mp3",
   image_url: "https://i.imgur.com/0zlqy2f.jpg",
   ord: 1
 )
 
-Track.create(
+track19 = Track.create(
   title: "Fantastic Baby",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Big+Bang+-+Fantastic+Baby.mp3",
   image_url: "https://i.imgur.com/0zlqy2f.jpg",
   ord: 1
+)
+
+Like.create(
+  station_id: station6.id,
+  track_id: track18.id
+)
+
+Like.create(
+  station_id: station6.id,
+  track_id: track19.id
 )
 
 station7 = Station.create(
@@ -213,25 +310,40 @@ station7 = Station.create(
 station7.image = URI.parse("https://i.imgur.com/O1Ld7ze.jpg")
 station7.save!
 
-Track.create(
+track20 = Track.create(
   title: "Peek-A-Boo",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Red+Velvet+-+Peek-A-Boo.mp3",
   image_url: "https://i.imgur.com/O1Ld7ze.jpg",
   ord: 1
 )
 
-Track.create(
+track21 = Track.create(
   title: "Red Flavor",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Red+Velvet+-+Red+Flavor.mp3",
   image_url: "https://i.imgur.com/O1Ld7ze.jpg",
   ord: 1
 )
 
-Track.create(
+track22 = Track.create(
   title: "Russian Roulette",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Red+Velvet+-+Russian+Roulette.mp3",
   image_url: "https://i.imgur.com/O1Ld7ze.jpg",
   ord: 1
+)
+
+Like.create(
+  station_id: station7.id,
+  track_id: track20.id
+)
+
+Like.create(
+  station_id: station7.id,
+  track_id: track21.id
+)
+
+Like.create(
+  station_id: station7.id,
+  track_id: track22.id
 )
 
 station8 = Station.create(
@@ -244,27 +356,41 @@ station8 = Station.create(
 station8.image = URI.parse("https://i.imgur.com/FLbvqe7.jpg")
 station8.save!
 
-Track.create(
+track23 = Track.create(
   title: "Décalcomanie",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Mamamoo+-+D%C3%A9calcomanie.mp3",
   image_url: "https://i.imgur.com/FLbvqe7.jpg",
   ord: 1
 )
 
-Track.create(
+track24 = Track.create(
   title: "Yes I am",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Mamamoo+-+Yes+I+Am.mp3",
   image_url: "https://i.imgur.com/FLbvqe7.jpg",
   ord: 1
 )
 
-Track.create(
+track25 = Track.create(
   title: "You're the best",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Mamamoo+-+You're+the+best.mp3",
   image_url: "https://i.imgur.com/FLbvqe7.jpg",
   ord: 1
 )
 
+Like.create(
+  station_id: station8.id,
+  track_id: track23.id
+)
+
+Like.create(
+  station_id: station8.id,
+  track_id: track24.id
+)
+
+Like.create(
+  station_id: station8.id,
+  track_id: track25.id
+)
 
 station9 = Station.create(
   station_name: "Got7",
@@ -276,18 +402,28 @@ station9 = Station.create(
 station9.image = URI.parse("https://i.imgur.com/ozRBsJ8.jpg")
 station9.save!
 
-Track.create(
+track26 = Track.create(
   title: "Hard Carry",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Got7+-+Hard+Carry.mp3",
   image_url: "https://i.imgur.com/ozRBsJ8.jpg",
   ord: 1
 )
 
-Track.create(
+track27 = Track.create(
   title: "If You Do",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Got7+-+If+You+Do.mp3",
   image_url: "https://i.imgur.com/ozRBsJ8.jpg",
   ord: 1
+)
+
+Like.create(
+  station_id: station9.id,
+  track_id: track26.id
+)
+
+Like.create(
+  station_id: station9.id,
+  track_id: track27.id
 )
 
 station10 = Station.create(
@@ -300,30 +436,50 @@ station10 = Station.create(
 station10.image = URI.parse("https://i.imgur.com/bLmnr79.jpg")
 station10.save!
 
-Track.create(
+track28 = Track.create(
   title: "LUV",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Apink+-+LUV.mp3",
   image_url: "https://i.imgur.com/bLmnr79.jpg",
   ord: 1
 )
 
-Track.create(
+track29 = Track.create(
   title: "Mr Chu",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Apink+-+Mr+Chu.mp3",
   image_url: "https://i.imgur.com/bLmnr79.jpg",
   ord: 1
 )
 
-Track.create(
+track30 = Track.create(
   title: "No No No",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Apink+-+No+No+No.mp3",
   image_url: "https://i.imgur.com/bLmnr79.jpg",
   ord: 1
 )
 
-Track.create(
+track31 = Track.create(
   title: "Remember",
   song_url: "https://s3-us-west-1.amazonaws.com/hallyu-dev/songs/Apink+-+Remember.mp3",
   image_url: "https://i.imgur.com/bLmnr79.jpg",
   ord: 1
+)
+
+Like.create(
+  station_id: station10.id,
+  track_id: track28.id
+)
+
+Like.create(
+  station_id: station10.id,
+  track_id: track29.id
+)
+
+Like.create(
+  station_id: station10.id,
+  track_id: track30.id
+)
+
+Like.create(
+  station_id: station10.id,
+  track_id: track31.id
 )
