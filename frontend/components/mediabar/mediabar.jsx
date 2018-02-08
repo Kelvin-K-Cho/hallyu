@@ -4,7 +4,7 @@ class MediaBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      volume: 1,
+      volume: .5,
       muted: false,
       duration: 0,
       currentTime: 0,
@@ -197,8 +197,12 @@ class MediaBar extends React.Component {
       trackImage = <img/>;
     }
 
-    let style = {
+    let sliderStyle = {
       width: `${this.setSlider() * 100}%`
+    };
+
+    let volumeStyle = {
+      width: `${this.state.volume * 10}%`
     };
 
     return (
@@ -216,7 +220,7 @@ class MediaBar extends React.Component {
           {this.props.audio.song_name}
         </span>
         <div id="slider">
-          <div style={style} id="slider-currentTime"></div>
+          <div style={sliderStyle} id="slider-currentTime"></div>
           <input id="slider-bar" type="range" min={0} max={1} step="any" value={this.setSlider()}></input>
         </div>
         <div id="media-buttons">
@@ -233,6 +237,7 @@ class MediaBar extends React.Component {
           </div>
         </div>
         <div id="volume">
+          <div style={volumeStyle} id="currentVolume"></div>
           <input id="volume-bar" onChange={this.setVolume} type="range" min={0} max={1} step="any" value={this.state.volume}></input>
         </div>
         <span id="text-timer">

@@ -10,7 +10,7 @@
 
 input[type=range] {
   -webkit-appearance: none;
-  background-color: #9a905d;
+  background: transparent;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -37,7 +37,7 @@ input[type=range]::-webkit-slider-runnable-track {
   margin-top: 2px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: grey;
+  background: lightgrey;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
@@ -66,8 +66,9 @@ input[type=range]::-webkit-slider-runnable-track {
 #slider-currentTime {
   padding-right: 3px;
   height: 50%;
-  background: orange;
+  background: #ff6600;
   z-index: 4;
+  border-radius: 2px;
   position: absolute;
 }
 
@@ -76,6 +77,32 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 1px;
   position: relative;
   bottom: 10px;
+}
+
+#volume {
+  position: absolute;
+  top: 15px;
+  width: 95%;
+  left: 1195px;
+}
+
+#currentVolume {
+  padding-right: 3px;
+  height: 22%;
+  top: 16px;
+  border-radius: 3px;
+  background: #ff6600;
+  z-index: 4;
+  position: absolute;
+}
+
+#volume-bar {
+  width: 10%;
+  height: 1px;
+  position: relative;
+  bottom: 10px;
+  margin-top: 28px;
+  margin-right: 20px;
 }
 
 #media-buttons {
@@ -106,18 +133,10 @@ input[type=range]::-webkit-slider-runnable-track {
   margin-left: 450px;
 }
 
-#volume {
-  display: inline-block;
-}
-
-#volume-bar {
-  margin-top: 28px;
-  margin-right: 20px;
-}
-
 #text-timer {
+  position: absolute;
   margin-top: 30px;
-  margin-right: 20px;
+  left: 1350px;
   color: white;
   font-size: 12px;
 }
