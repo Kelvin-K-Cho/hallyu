@@ -1,30 +1,21 @@
 # Hallyu Production Readme
 
-Hallyu is a full-stack single-page application inspired by Pandora built using Ruby on Rails backend with a React/Redux frontend.  The app allows users to login, create/personalize stations and listen to music.  The app features a media bar that allows users to pause/play audio, skip to next track and adjust volume.
+Hallyu, also known as the "Korean Wave", is a single-page music web application inspired by Pandora. It allows users to create stations based off their favorite k-pop artists and personalize their stations through likes/dislikes.
 
+Application Link: [Hallyu](hallyu.herokuapp.com "Hallyu")
 
+![](https://imgur.com/a/VH4oL)
 
-# README
+# Features
++ User authentication using secure session tokens via encryption provided by BCrypt.
++ Media Bar that allows users to play/pause audio, skip tracks and adjust volume.
++ Each station keeps track of the likes/dislikes of every track leading to more personalization of the user experience.
++ Image Uploading provided by Paperclip and hosted on Amazon Web Services.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Technology
 
-Things you may want to cover:
+Hallyu was designed and built in two weeks using Ruby on Rails RESTful backend to handle the PostgreSQL database with a React/Redux frontend.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Future Implementation
++ Search bar to add existing stations to user's stations.
++ Users can edit their profile.
