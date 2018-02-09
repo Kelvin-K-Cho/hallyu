@@ -47,8 +47,8 @@ const uiReducer = (oldState = initialState, action) => {
       return newState;
     case REMOVE_LIKE:
       newState = merge({}, oldState);
-      newState['likes'].splice(newState['likes'].indexOf(action.id), 1);
-      newState['track_likes'].splice(newState['track_likes'].indexOf(action.track_id), 1);
+      newState['likes'].splice(newState['likes'].indexOf(action.like.id), 1);
+      newState['track_likes'].splice(newState['track_likes'].indexOf(action.like.track_id), 1);
       return newState;
     case REMOVE_DISLIKE:
       newState = merge({}, oldState);

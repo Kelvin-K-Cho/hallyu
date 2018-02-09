@@ -1,3 +1,3 @@
 json.set! @dislike.id do
-  json.partial! "api/dislike/dislike", dislike: @dislike
+  json.partial! "api/dislikes/dislike", dislike: @dislike
 end

@@ -124,61 +124,94 @@ class MediaBar extends React.Component {
   }
 
   like() {
+
+    const deleteDislike = Object.values(this.props.dislikes).find((dislike) =>
+      dislike.station_id === this.props.ui.stationId &&
+        dislike.track_id === this.props.audio.currentTrack
+      );
+    if (deleteDislike) {
+      this.props.deleteDislike(deleteDislike.id);
+    }
+
+
     let likeItem = {
       'station_id': this.props.ui.stationId,
       'track_id': this.props.audio.currentTrack
     };
-    for (let i = 0; i < this.props.ui.dislikes.length; i++) {
-      let dislikeId = this.props.ui.dislikes[i];
-      if (this.props.dislikes[dislikeId] === undefined) continue;
-      if (this.props.dislikes[dislikeId].station_id === this.props.ui.stationId &&
-      this.props.dislikes[dislikeId].track_id === this.props.audio.currentTrack) {
-        this.props.deleteDislike(dislikeId);
-        break;
-      }
-    }
     this.props.createLike(likeItem);
+    // for (let i = 0; i < this.props.ui.dislikes.length; i++) {
+    //   let dislikeId = this.props.ui.dislikes[i];
+    //   if (this.props.dislikes[dislikeId] === undefined) continue;
+    //   if (this.props.dislikes[dislikeId].station_id === this.props.ui.stationId &&
+    //   this.props.dislikes[dislikeId].track_id === this.props.audio.currentTrack) {
+    //     this.props.deleteDislike(dislikeId);
+    //     break;
+    //   }
+    // }
   }
 
   dislike() {
+    const deleteLike = Object.values(this.props.likes).find((like) =>
+      like.station_id === this.props.ui.stationId &&
+        like.track_id === this.props.audio.currentTrack
+      );
+    if (deleteLike) {
+      this.props.deleteLike(deleteLike.id);
+    }
+
+
     let dislikeItem = {
       'station_id': this.props.ui.stationId,
       'track_id': this.props.audio.currentTrack
     };
-    for (let i = 0; i < this.props.ui.likes.length; i++) {
-      let likeId = this.props.ui.likes[i];
-      if (this.props.likes[likeId] === undefined) continue;
-      if (this.props.likes[likeId].station_id === this.props.ui.stationId &&
-      this.props.likes[likeId].track_id === this.props.audio.currentTrack) {
-        this.props.deleteLike(likeId);
-        break;
-      }
-    }
     this.props.createDislike(dislikeItem);
+    // for (let i = 0; i < this.props.ui.likes.length; i++) {
+    //   let likeId = this.props.ui.likes[i];
+    //   if (this.props.likes[likeId] === undefined) continue;
+    //   if (this.props.likes[likeId].station_id === this.props.ui.stationId &&
+    //   this.props.likes[likeId].track_id === this.props.audio.currentTrack) {
+    //     this.props.deleteLike(likeId);
+    //     break;
+    //   }
+    // }
   }
 
   unLike() {
-    for (let i = 0; i < this.props.ui.likes.length; i++) {
-      let likeId = this.props.ui.likes[i];
-      if (this.props.likes[likeId] === undefined) continue;
-      if (this.props.likes[likeId].station_id === this.props.ui.stationId &&
-      this.props.likes[likeId].track_id === this.props.audio.currentTrack) {
-        this.props.deleteLike(likeId);
-        break;
-      }
-    }
+    // debugger;
+    // for (let i = 0; i < this.props.ui.likes.length; i++) {
+    //   let likeId = this.props.ui.likes[i];
+    //   if (this.props.likes[likeId] === undefined) continue;
+    //   debugger;
+    //   if (this.props.likes[likeId].station_id === this.props.ui.stationId &&
+    //   this.props.likes[likeId].track_id === this.props.audio.currentTrack) {
+    //     this.props.deleteLike(likeId);
+    //     break;
+    //   }
+    // }
+
+    const deleteLike = Object.values(this.props.likes).find((like) =>
+      like.station_id === this.props.ui.stationId &&
+        like.track_id === this.props.audio.currentTrack
+      );
+    this.props.deleteLike(deleteLike.id);
+
   }
 
   unDislike() {
-    for (let i = 0; i < this.props.ui.dislikes.length; i++) {
-      let dislikeId = this.props.ui.dislikes[i];
-      if (this.props.dislikes[dislikeId] === undefined) continue;
-      if (this.props.dislikes[dislikeId].station_id === this.props.ui.stationId &&
-      this.props.dislikes[dislikeId].track_id === this.props.audio.currentTrack) {
-        this.props.deleteDislike(dislikeId);
-        break;
-      }
-    }
+    const deleteDislike = Object.values(this.props.dislikes).find((dislike) =>
+      dislike.station_id === this.props.ui.stationId &&
+        dislike.track_id === this.props.audio.currentTrack
+      );
+    this.props.deleteDislike(deleteDislike.id);
+    // for (let i = 0; i < this.props.ui.dislikes.length; i++) {
+    //   let dislikeId = this.props.ui.dislikes[i];
+    //   if (this.props.dislikes[dislikeId] === undefined) continue;
+    //   if (this.props.dislikes[dislikeId].station_id === this.props.ui.stationId &&
+    //   this.props.dislikes[dislikeId].track_id === this.props.audio.currentTrack) {
+    //     this.props.deleteDislike(dislikeId);
+    //     break;
+    //   }
+    // }
   }
 
   render() {

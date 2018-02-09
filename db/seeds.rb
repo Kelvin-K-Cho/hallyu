@@ -110,23 +110,23 @@ track8 = Track.create(
 
 
 Dislike.create(
-  station_id: station1,
-  track_id: track5
+  station_id: station1.id,
+  track_id: track5.id
 )
 
 Dislike.create(
-  station_id: station1,
-  track_id: track6
+  station_id: station1.id,
+  track_id: track6.id
 )
 
 Dislike.create(
-  station_id: station1,
-  track_id: track7
+  station_id: station1.id,
+  track_id: track7.id
 )
 
 Dislike.create(
-  station_id: station1,
-  track_id: track8
+  station_id: station1.id,
+  track_id: track8.id
 )
 
 Like.create(

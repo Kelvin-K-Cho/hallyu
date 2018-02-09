@@ -17,7 +17,7 @@ class Api::DislikesController < ApplicationController
   end
 
   def destroy
-    @dislike = Dislike.find_by(params[:id])
+    @dislike = Dislike.find(params[:id])
     if @dislike
       @dislike.destroy
       render @dislike

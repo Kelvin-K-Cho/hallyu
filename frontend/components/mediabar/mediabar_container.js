@@ -19,9 +19,9 @@ const mapDispatchToProps = (dispatch) => ({
   fetchLike: (id) => dispatch(fetchLike(id)),
   fetchDislike: (id) => dispatch(fetchDislike(id)),
   createLike: (like) => dispatch(createLike(like)),
-  deleteLike: (like) => dispatch(deleteLike(like)),
+  deleteLike: (id) => dispatch(deleteLike(id)),
   createDislike: (dislike) => dispatch(createDislike(dislike)),
-  deleteDislike: (dislike) => dispatch(deleteDislike(dislike)),
+  deleteDislike: (id) => dispatch(deleteDislike(id)),
 
   togglePlay: () => dispatch(togglePlay()),
   toggleMute: () => dispatch(toggleMute()),
