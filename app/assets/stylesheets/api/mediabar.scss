@@ -83,7 +83,7 @@ input[type=range]::-webkit-slider-runnable-track {
   position: absolute;
   top: 15px;
   width: 95%;
-  left: 1195px;
+  // left: 1195px;
 }
 
 #currentVolume {
@@ -94,6 +94,12 @@ input[type=range]::-webkit-slider-runnable-track {
   background: #ff6600;
   z-index: 4;
   position: absolute;
+}
+
+#volume-container {
+  position:absolute;
+  left: 82%;
+  width: 100%;
 }
 
 #volume-bar {
@@ -116,6 +122,7 @@ input[type=range]::-webkit-slider-runnable-track {
   align-items: center;
   color: white;
   outline: none;
+  top: 1%;
   margin-left: 506px;
   cursor: pointer;
 }
@@ -145,13 +152,13 @@ input[type=range]::-webkit-slider-runnable-track {
 
 #mute-button {
   position: absolute;
-  margin-left: 450px;
+  left: 79.5%;
 }
 
 #text-timer {
   position: absolute;
   margin-top: 30px;
-  left: 1350px;
+  right: 15px;
   color: white;
   font-size: 12px;
 }

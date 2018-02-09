@@ -360,7 +360,7 @@ class MediaBar extends React.Component {
           </audio>
           {trackImage}
           <span id='media-title'>
-            {this.props.audio.song_name}
+            Song: {this.props.audio.song_name}
           </span>
           <div id="slider">
             <div style={sliderStyle} id="slider-currentTime"></div>
@@ -383,10 +383,12 @@ class MediaBar extends React.Component {
               {muteOff}
             </div>
           </div>
-          <div id="volume">
-            <div style={volumeStyle} id="currentVolume"></div>
-            <input id="volume-bar" onChange={this.setVolume} type="range" min={0} max={1} step="any" value={this.state.volume}></input>
-          </div>
+          <span id="volume-container">
+            <div id="volume">
+              <div style={volumeStyle} id="currentVolume"></div>
+              <input id="volume-bar" onChange={this.setVolume} type="range" min={0} max={1} step="any" value={this.state.volume}></input>
+            </div>
+          </span>
           <span id="text-timer">
             {this.parseTime(this.state.currentTime)}&nbsp;&nbsp;|&nbsp;&nbsp;{this.parseTime(this.state.duration)}
           </span>

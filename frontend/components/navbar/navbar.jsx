@@ -72,9 +72,9 @@ class NavBar extends React.Component {
             </Link>
             &nbsp;
             &nbsp;
-            <div id="now-playing">
-              Current Station{station}
-            </div>
+            <span id="now-playing">
+              Now Playing{station}
+            </span>
             <ErrorList errors={ this.props.errors } />
             <div>
               {display}
