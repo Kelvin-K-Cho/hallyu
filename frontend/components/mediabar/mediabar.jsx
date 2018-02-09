@@ -28,10 +28,12 @@ class MediaBar extends React.Component {
   componentDidMount() {
     this.props.fetchLikes();
     this.props.fetchDislikes();
-    this.setState({
-      currentTime: this.audio.currentTime,
-      duration: this.audio.duration
-    });
+    if (this.props.audio.currentTrack){
+      this.setState({
+        currentTime: this.audio.currentTime,
+        duration: this.audio.duration
+      });
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -112,15 +114,21 @@ class MediaBar extends React.Component {
   }
 
   setVolume(event){
-    if (this.props.audio.currentTrack) {
-      let volume = event.target.value;
-      this.audio.volume = volume;
-      this.setState({
-        volume
-      });
-    } else {
-      return;
-    }
+    // if (this.props.audio.currentTrack) {
+    //   let volume = event.target.value;
+    //   this.audio.volume = volume;
+    //   this.setState({
+    //     volume
+    //   });
+    // } else {
+    //   return;
+    // }
+
+    let volume = event.target.value;
+    this.audio.volume = volume;
+    this.setState({
+      volume
+    });
   }
 
   like() {
@@ -338,50 +346,56 @@ class MediaBar extends React.Component {
       width: `${this.state.volume * 10}%`
     };
 
-    return (
-      <div id="audioplayer">
-        <audio
-          ref={(audio) => { this.audio = audio; }}
-          src={trackUrl}
-          onCanPlayThrough={this.getDuration}
-          onTimeUpdate={this.getCurrentTime}
-          onEnded={this.setEnd}
-          >
-        </audio>
-        {trackImage}
-        <span id='media-title'>
-          {this.props.audio.song_name}
-        </span>
-        <div id="slider">
-          <div style={sliderStyle} id="slider-currentTime"></div>
-          <input id="slider-bar" type="range" min={0} max={1} step="any" value={this.setSlider()}></input>
-        </div>
-        <div id="media-buttons">
-          {dislikeOn}
-          {dislikeOff}
-          {toggleOn}
-          {toggleOff}
-          {playButton}
-          {pauseButton}
-          <span id="button-next" onClick={this.props.nextTrack}>
-            <i className="fas fa-fast-forward fa-2x next-button"></i>
+    if (this.props.audio.currentTrack) {
+      return (
+        <div id="audioplayer">
+          <audio
+            ref={(audio) => { this.audio = audio; }}
+            src={trackUrl}
+            onCanPlayThrough={this.getDuration}
+            onTimeUpdate={this.getCurrentTime}
+            onEnded={this.setEnd}
+            >
+          </audio>
+          {trackImage}
+          <span id='media-title'>
+            {this.props.audio.song_name}
           </span>
-          {likeOn}
-          {likeOff}
-          <div id="mute-button">
-            {muteOn}
-            {muteOff}
+          <div id="slider">
+            <div style={sliderStyle} id="slider-currentTime"></div>
+            <input id="slider-bar" type="range" min={0} max={1} step="any" value={this.setSlider()}></input>
           </div>
+          <div id="media-buttons">
+            {dislikeOn}
+            {dislikeOff}
+            {toggleOn}
+            {toggleOff}
+            {playButton}
+            {pauseButton}
+            <span id="button-next" onClick={this.props.nextTrack}>
+              <i className="fas fa-fast-forward fa-2x next-button"></i>
+            </span>
+            {likeOn}
+            {likeOff}
+            <div id="mute-button">
+              {muteOn}
+              {muteOff}
+            </div>
+          </div>
+          <div id="volume">
+            <div style={volumeStyle} id="currentVolume"></div>
+            <input id="volume-bar" onChange={this.setVolume} type="range" min={0} max={1} step="any" value={this.state.volume}></input>
+          </div>
+          <span id="text-timer">
+            {this.parseTime(this.state.currentTime)}&nbsp;&nbsp;|&nbsp;&nbsp;{this.parseTime(this.state.duration)}
+          </span>
         </div>
-        <div id="volume">
-          <div style={volumeStyle} id="currentVolume"></div>
-          <input id="volume-bar" onChange={this.setVolume} type="range" min={0} max={1} step="any" value={this.state.volume}></input>
-        </div>
-        <span id="text-timer">
-          {this.parseTime(this.state.currentTime)}&nbsp;&nbsp;|&nbsp;&nbsp;{this.parseTime(this.state.duration)}
-        </span>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div id="audioplayer"></div>
+      );
+    }
   }
 }
 

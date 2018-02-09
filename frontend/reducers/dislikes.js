@@ -15,6 +15,10 @@ const DislikesReducer = (oldState = {}, action) => {
       let newState = merge({}, oldState);
       newState[action.dislike.id] = action.dislike;
       return newState;
+      case REMOVE_DISLIKE:
+      newState = merge({}, oldState);
+      delete newState[action.dislike.id];
+      return newState;
     default:
       return oldState;
   }
