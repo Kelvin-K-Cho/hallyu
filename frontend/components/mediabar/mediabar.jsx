@@ -210,6 +210,7 @@ class MediaBar extends React.Component {
       dislike.station_id === this.props.ui.stationId &&
         dislike.track_id === this.props.audio.currentTrack
       );
+    debugger;
     this.props.deleteDislike(deleteDislike.id);
     // for (let i = 0; i < this.props.ui.dislikes.length; i++) {
     //   let dislikeId = this.props.ui.dislikes[i];
