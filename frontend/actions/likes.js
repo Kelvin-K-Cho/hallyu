@@ -49,11 +49,3 @@ export const deleteLike = (id) => dispatch => (
     (like) => { dispatch(removeLike(like)); dispatch(clearErrors());},
     err => dispatch(receiveErrors(err.responseJSON)))
 );
-
-// export const deleteLike = (stationId, trackId) => dispatch => (
-//   LikeAPIUtil.fetchSpecificLike(stationId, trackId).then(
-//     (like) => dispatch(LikeAPIUtil.deleteLike(like.id)).then(
-//       (serverLike) => { dispatch(removeLike(like)); dispatch(clearErrors());}),
-//       err => dispatch(receiveErrors(err.responseJSON)))
-//     )
-// ;

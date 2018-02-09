@@ -10,8 +10,8 @@ let initialState = {
   dislikes: [],
   track_likes: [],
   track_dislikes: [],
-  likeCheck: undefined,
-  dislikeCheck: undefined
+  // likeCheck: undefined,
+  // dislikeCheck: undefined
 };
 
 const uiReducer = (oldState = initialState, action) => {
@@ -27,14 +27,14 @@ const uiReducer = (oldState = initialState, action) => {
       newState['track_likes'] = action.station.track_likes;
       newState['track_dislikes'] = action.station.track_dislikes;
       return newState;
-    case RECEIVE_LIKE:
-      newState = merge({}, oldState);
-      newState['likeCheck'] = action.like;
-      return newState;
-    case RECEIVE_DISLIKE:
-      newState = merge({}, oldState);
-      newState['dislikeCheck'] = action.dislike;
-      return newState;
+    // case RECEIVE_LIKE:
+    //   newState = merge({}, oldState);
+    //   newState['likeCheck'] = action.like;
+    //   return newState;
+    // case RECEIVE_DISLIKE:
+    //   newState = merge({}, oldState);
+    //   newState['dislikeCheck'] = action.dislike;
+    //   return newState;
     case MAKE_LIKE:
       newState = merge({}, oldState);
       newState['likes'].push(action.like.id);
@@ -53,7 +53,7 @@ const uiReducer = (oldState = initialState, action) => {
     case REMOVE_DISLIKE:
       newState = merge({}, oldState);
       newState['dislikes'].splice(newState['dislikes'].indexOf(action.id), 1);
-      newState['track_dislikes'].splice(newState['track_dislikes'].indexOf(action.id), 1);
+      newState['track_dislikes'].splice(newState['track_dislikes'].indexOf(action.track_id), 1);
       return newState;
     default:
       return oldState;

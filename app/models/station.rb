@@ -28,23 +28,19 @@ class Station < ApplicationRecord
   has_many :dislikes,
     primary_key: :id,
     foreign_key: :station_id,
-    class_name: :Dislike,
-    dependent: :destroy
+    class_name: :Dislike
 
   has_many :likes,
     primary_key: :id,
     foreign_key: :station_id,
-    class_name: :Like,
-    dependent: :destroy
+    class_name: :Like
 
   has_many :track_dislikes,
     through: :dislikes,
-    source: :track,
-    dependent: :destroy
+    source: :track
 
   has_many :track_likes,
     through: :likes,
-    source: :track,
-    dependent: :destroy
+    source: :track
 
 end

@@ -26,6 +26,8 @@ class MediaBar extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchLikes();
+    this.props.fetchDislikes();
     this.setState({
       currentTime: this.audio.currentTime,
       duration: this.audio.duration
@@ -128,11 +130,10 @@ class MediaBar extends React.Component {
     };
     for (let i = 0; i < this.props.ui.dislikes.length; i++) {
       let dislikeId = this.props.ui.dislikes[i];
-      this.props.fetchDislike(dislikeId);
-      if (this.props.ui.dislikeCheck === undefined) continue;
-      if (this.props.ui.dislikeCheck.station_id === this.props.ui.stationId &&
-      this.props.ui.dislikeCheck.track_id === this.props.audio.currentTrack) {
-        this.props.deleteDislike(this.props.ui.dislikeCheck);
+      if (this.props.dislikes[dislikeId] === undefined) continue;
+      if (this.props.dislikes[dislikeId].station_id === this.props.ui.stationId &&
+      this.props.dislikes[dislikeId].track_id === this.props.audio.currentTrack) {
+        this.props.deleteDislike(dislikeId);
         break;
       }
     }
@@ -146,11 +147,10 @@ class MediaBar extends React.Component {
     };
     for (let i = 0; i < this.props.ui.likes.length; i++) {
       let likeId = this.props.ui.likes[i];
-      this.props.fetchLike(likeId);
-      if (this.props.ui.likeCheck === undefined) continue;
-      if (this.props.ui.likeCheck.station_id === this.props.ui.stationId &&
-      this.props.ui.likeCheck.track_id === this.props.audio.currentTrack) {
-        this.props.deleteLike(this.props.ui.likeCheck);
+      if (this.props.likes[likeId] === undefined) continue;
+      if (this.props.likes[likeId].station_id === this.props.ui.stationId &&
+      this.props.likes[likeId].track_id === this.props.audio.currentTrack) {
+        this.props.deleteLike(likeId);
         break;
       }
     }
@@ -160,11 +160,10 @@ class MediaBar extends React.Component {
   unLike() {
     for (let i = 0; i < this.props.ui.likes.length; i++) {
       let likeId = this.props.ui.likes[i];
-      this.props.fetchLike(likeId);
-      if (this.props.ui.likeCheck === undefined) continue;
-      if (this.props.ui.likeCheck.station_id === this.props.ui.stationId &&
-      this.props.ui.likeCheck.track_id === this.props.audio.currentTrack) {
-        this.props.deleteLike(this.props.ui.likeCheck);
+      if (this.props.likes[likeId] === undefined) continue;
+      if (this.props.likes[likeId].station_id === this.props.ui.stationId &&
+      this.props.likes[likeId].track_id === this.props.audio.currentTrack) {
+        this.props.deleteLike(likeId);
         break;
       }
     }
@@ -173,11 +172,10 @@ class MediaBar extends React.Component {
   unDislike() {
     for (let i = 0; i < this.props.ui.dislikes.length; i++) {
       let dislikeId = this.props.ui.dislikes[i];
-      this.props.fetchDislike(dislikeId);
-      if (this.props.ui.dislikeCheck === undefined) continue;
-      if (this.props.ui.dislikeCheck.station_id === this.props.ui.stationId &&
-      this.props.ui.dislikeCheck.track_id === this.props.audio.currentTrack) {
-        this.props.deleteDislike(this.props.ui.dislikeCheck);
+      if (this.props.dislikes[dislikeId] === undefined) continue;
+      if (this.props.dislikes[dislikeId].station_id === this.props.ui.stationId &&
+      this.props.dislikes[dislikeId].track_id === this.props.audio.currentTrack) {
+        this.props.deleteDislike(dislikeId);
         break;
       }
     }

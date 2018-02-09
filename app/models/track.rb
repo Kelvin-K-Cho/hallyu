@@ -23,23 +23,19 @@ class Track < ApplicationRecord
   has_many :dislikes,
     primary_key: :id,
     foreign_key: :track_id,
-    class_name: :Dislike,
-    dependent: :destroy
+    class_name: :Dislike
 
   has_many :likes,
     primary_key: :id,
     foreign_key: :track_id,
-    class_name: :Like,
-    dependent: :destroy
+    class_name: :Like
 
   has_many :station_dislikes,
     through: :dislikes,
-    source: :station,
-    dependent: :destroy
+    source: :station
 
   has_many :station_likes,
     through: :likes,
-    source: :station,
-    dependent: :destroy
+    source: :station
 
 end

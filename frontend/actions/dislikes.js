@@ -49,11 +49,3 @@ export const deleteDislike = (id) => dispatch => (
     (dislike) => { dispatch(removeDislike(dislike)); dispatch(clearErrors());},
     err => dispatch(receiveErrors(err.responseJSON)))
 );
-
-// export const deleteDislike = (stationId, trackId) => dispatch => (
-//   DislikeAPIUtil.fetchSpecificDislike(stationId, trackId).then(
-//     (dislike) => dispatch(DislikeAPIUtil.deleteDislike(dislike.id)).then(
-//       (serverDislike) => { dispatch(removeDislike(serverDislike)); dispatch(clearErrors());}),
-//       err => dispatch(receiveErrors(err.responseJSON)))
-//     )
-// ;
