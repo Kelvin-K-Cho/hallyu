@@ -19,6 +19,10 @@ class MediaBar extends React.Component {
     this.getCurrentTime = this.getCurrentTime.bind(this);
     this.getDuration = this.getDuration.bind(this);
     this.setVolume = this.setVolume.bind(this);
+    this.like = this.like.bind(this);
+    this.dislike = this.dislike.bind(this);
+    this.unLike = this.unLike.bind(this);
+    this.unDislike = this.unDislike.bind(this);
   }
 
   componentDidMount() {
@@ -52,8 +56,10 @@ class MediaBar extends React.Component {
   }
 
   setEnd () {
+    debugger;
     if (this.props.audio.repeat) {
       this.audio.currentTime = 0;
+      this.audio.play();
     } else {
       this.props.nextTrack();
     }
@@ -127,6 +133,32 @@ class MediaBar extends React.Component {
     }
   }
 
+  like() {
+    let likeItem = {
+      'station_id': this.props.ui.stationId,
+      'track_id': this.props.audio.currentTrack
+    };
+    this.props.createLike(likeItem);
+    this.props.deleteDislike(this.props.audio.currentTrack);
+  }
+
+  dislike() {
+    let dislikeItem = {
+      'station_id': this.props.ui.stationId,
+      'track_id': this.props.audio.currentTrack
+    };
+    this.props.createDislike(dislikeItem);
+    this.props.deleteLike(this.props.audio.currentTrack);
+  }
+
+  unLike() {
+    this.props.deleteLike(this.props.audio.currentTrack);
+  }
+
+  unDislike() {
+    this.props.deleteDislike(this.props.audio.currentTrack);
+  }
+
   render() {
     let trackUrl = '/';
 
@@ -185,8 +217,51 @@ class MediaBar extends React.Component {
       toggleOff = null;
     }
 
+    let like;
+
+    if (this.props.ui.likes) {
+      like = (this.props.ui.likes.indexOf(this.props.audio.currentTrack) !== -1) ? true : false;
+    }
+
     let likeOn;
     let likeOff;
+
+    if (like) {
+      likeOn =
+      <span id="button-like-on" onClick={this.unLike}>
+        <i class="fas fa-thumbs-up"></i>
+      </span>;
+      likeOff = null;
+    } else {
+      likeOff =
+      <span id="button-like-off" onClick={this.like}>
+        <i class="fas fa-thumbs-up"></i>
+      </span>;
+      likeOn = null;
+    }
+
+    let dislike;
+
+    if (this.props.ui.dislikes) {
+      dislike = (this.props.ui.dislikes.indexOf(this.props.audio.currentTrack) !== -1 ? true : false);
+    }
+
+    let dislikeOn;
+    let dislikeOff;
+
+    if (dislike) {
+      dislikeOn =
+      <span id="button-dislike-on" onClick={this.unDislike}>
+        <i class="fas fa-thumbs-down"></i>
+      </span>;
+      dislikeOff = null;
+    } else {
+      dislikeOff =
+      <span id="button-dislike-off" onClick={this.dislike}>
+        <i class="fas fa-thumbs-down"></i>
+      </span>;
+      dislikeOn = null;
+    }
 
     let trackImage;
 
@@ -227,6 +302,8 @@ class MediaBar extends React.Component {
           <input id="slider-bar" type="range" min={0} max={1} step="any" value={this.setSlider()}></input>
         </div>
         <div id="media-buttons">
+          {dislikeOn}
+          {dislikeOff}
           {toggleOn}
           {toggleOff}
           {playButton}
@@ -234,6 +311,8 @@ class MediaBar extends React.Component {
           <span id="button-next" onClick={this.props.nextTrack}>
             <i className="fas fa-fast-forward fa-2x next-button"></i>
           </span>
+          {likeOn}
+          {likeOff}
           <div id="mute-button">
             {muteOn}
             {muteOff}

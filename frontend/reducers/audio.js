@@ -32,9 +32,7 @@ export default (state = initialState, action) => {
 
     case TOGGLE_PLAY:
      newState = merge({}, state);
-     console.log(newState);
      newState['playing'] = !state.playing;
-     console.log(newState);
      return newState;
 
     case TOGGLE_REPEAT:
