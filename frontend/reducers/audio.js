@@ -48,8 +48,6 @@ export default (state = initialState, action) => {
     case NEXT_TRACK:
       newState = merge({}, state);
       let newQueue = shuffle(state.queue);
-      // let oldTrack = newQueue.shift();
-      // newQueue.push(oldTrack);
       newState['queue'] = newQueue;
       newState['currentTrack'] = newQueue[0].id;
       newState['song_url'] = newQueue[0].song_url;
