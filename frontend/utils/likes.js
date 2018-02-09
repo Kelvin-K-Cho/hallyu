@@ -26,3 +26,14 @@ export const deleteLike = (id) => (
     url: `api/likes/${id}`
   })
 );
+
+// export const fetchSpecificLike = (stationId, trackId) => (
+//   $.ajax({
+//     method: 'GET',
+//     url: `api/dislikes`,
+//     data: {
+//       station_id: stationId,
+//       track_id: trackId
+//     }
+//   })
+// );

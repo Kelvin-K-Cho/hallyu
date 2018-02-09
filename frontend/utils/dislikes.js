@@ -20,9 +20,20 @@ export const createDislike = (dislike) => (
   })
 );
 
-export const deleteDislike = (id) => (
-  $.ajax({
+export const deleteDislike = (id) => {
+  return $.ajax({
     method: 'DELETE',
     url: `api/dislikes/${id}`
-  })
-);
+  });
+};
+// 
+// export const fetchSpecificDislike = (stationId, trackId) => (
+//   $.ajax({
+//     method: 'GET',
+//     url: `api/dislikes`,
+//     data: {
+//       station_id: stationId,
+//       track_id: trackId
+//     }
+//   })
+// );

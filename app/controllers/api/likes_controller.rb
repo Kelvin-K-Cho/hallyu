@@ -17,9 +17,10 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    @like = current_user.stations.track_likes.find(params[:id])
+    @like = Like.find_by(params[:id])
     if @like
       @like.destroy
+      render @like
     else
       render json: ['Cannot be found'], status: 410
     end

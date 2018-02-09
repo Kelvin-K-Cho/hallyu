@@ -17,9 +17,10 @@ class Api::DislikesController < ApplicationController
   end
 
   def destroy
-    @dislike = current_user.stations.track_dislikes.find(params[:id])
+    @dislike = Dislike.find_by(params[:id])
     if @dislike
       @dislike.destroy
+      render @dislike
     else
       render json: ['Cannot be found'], status: 410
     end
