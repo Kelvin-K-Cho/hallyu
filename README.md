@@ -2,7 +2,7 @@
 
 Hallyu, also known as the "Korean Wave", is a single-page music web application inspired by Pandora. It allows users to create stations based off their favorite k-pop artists and personalize their stations through likes/dislikes.
 
-Application Link: [Hallyu](hallyu.herokuapp.com "Hallyu")
+Application Link: [Hallyu](http://hallyu.herokuapp.com/#/)
 
 ![HomePage](https://s3-us-west-1.amazonaws.com/hallyu-dev/images/Screen+Shot+2018-02-09+at+1.30.23+PM.png)
 
