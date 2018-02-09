@@ -6,7 +6,7 @@ class CreateTracks < ActiveRecord::Migration[5.1]
       t.integer :ord, null: false
       t.string :image_url, null: false
       t.string :song_url, null: false
-      t.integer :album_id, null: false
+      t.integer :album_id
 
       t.timestamps
     end
