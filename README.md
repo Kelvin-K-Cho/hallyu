@@ -13,8 +13,10 @@ Application Link: [Hallyu](hallyu.herokuapp.com "Hallyu")
 + Each station keeps track of the likes/dislikes of every track leading to more personalization of the user experience.
 + Image Uploading provided by Paperclip and hosted on Amazon Web Services.
 
+![FullApp](https://s3-us-west-1.amazonaws.com/hallyu-dev/images/Screen+Shot+2018-02-09+at+2.36.46+PM.png)
+
 # Challenges
-+ The media player was built utilizing React/Redux.  HTML5's native audio tag was only used to parse the audio (no outside library was used for this feature).  The "state" of the media player is tracked by the application.
+1. The media player was built utilizing React/Redux.  HTML5's native audio tag was only used to parse the audio (no outside library was used for this feature).  The "state" of the media player is tracked by the application.
 
 ![MediaButtons](https://s3-us-west-1.amazonaws.com/hallyu-dev/images/Screen+Shot+2018-02-09+at+2.22.41+PM.png)
 
@@ -64,7 +66,7 @@ Application Link: [Hallyu](hallyu.herokuapp.com "Hallyu")
 
  + A switch statement handles the different interactions.  A new state of the media player is generated each time to avoid directly mutating the old state.
 
-+ The volume/duration bars are dynamically changing.  In order to allow the bars to show progress, CSS combined with native JavaScript allow for manipulation of how each element is rendered.
+2. The volume/duration bars are dynamically changing.  In order to allow the bars to show progress, CSS combined with native JavaScript allow for manipulation of how each element is rendered.
 
 ![VolumeBar](https://s3-us-west-1.amazonaws.com/hallyu-dev/images/Screen+Shot+2018-02-09+at+2.10.42+PM.png)
 
