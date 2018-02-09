@@ -12,6 +12,8 @@ Application Link: [Hallyu](hallyu.herokuapp.com "Hallyu")
 + Each station keeps track of the likes/dislikes of every track leading to more personalization of the user experience.
 + Image Uploading provided by Paperclip and hosted on Amazon Web Services.
 
+#Challenges
+
 # Technology
 
 Hallyu was designed and built in two weeks using Ruby on Rails RESTful backend to handle the PostgreSQL database with a React/Redux frontend.
