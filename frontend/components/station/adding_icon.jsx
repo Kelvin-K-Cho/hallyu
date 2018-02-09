@@ -8,6 +8,3 @@ const AddingIcon = () => (
 );
 
 export default AddingIcon;
-
-// https://i.imgur.com/8usMz2U.png white
-// https://i.imgur.com/8IEn296.png blue

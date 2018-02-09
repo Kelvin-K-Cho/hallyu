@@ -114,16 +114,6 @@ class MediaBar extends React.Component {
   }
 
   setVolume(event){
-    // if (this.props.audio.currentTrack) {
-    //   let volume = event.target.value;
-    //   this.audio.volume = volume;
-    //   this.setState({
-    //     volume
-    //   });
-    // } else {
-    //   return;
-    // }
-
     let volume = event.target.value;
     this.audio.volume = volume;
     this.setState({
@@ -147,15 +137,7 @@ class MediaBar extends React.Component {
       'track_id': this.props.audio.currentTrack
     };
     this.props.createLike(likeItem);
-    // for (let i = 0; i < this.props.ui.dislikes.length; i++) {
-    //   let dislikeId = this.props.ui.dislikes[i];
-    //   if (this.props.dislikes[dislikeId] === undefined) continue;
-    //   if (this.props.dislikes[dislikeId].station_id === this.props.ui.stationId &&
-    //   this.props.dislikes[dislikeId].track_id === this.props.audio.currentTrack) {
-    //     this.props.deleteDislike(dislikeId);
-    //     break;
-    //   }
-    // }
+
   }
 
   dislike() {
@@ -173,29 +155,10 @@ class MediaBar extends React.Component {
       'track_id': this.props.audio.currentTrack
     };
     this.props.createDislike(dislikeItem);
-    // for (let i = 0; i < this.props.ui.likes.length; i++) {
-    //   let likeId = this.props.ui.likes[i];
-    //   if (this.props.likes[likeId] === undefined) continue;
-    //   if (this.props.likes[likeId].station_id === this.props.ui.stationId &&
-    //   this.props.likes[likeId].track_id === this.props.audio.currentTrack) {
-    //     this.props.deleteLike(likeId);
-    //     break;
-    //   }
-    // }
+
   }
 
   unLike() {
-    // debugger;
-    // for (let i = 0; i < this.props.ui.likes.length; i++) {
-    //   let likeId = this.props.ui.likes[i];
-    //   if (this.props.likes[likeId] === undefined) continue;
-    //   debugger;
-    //   if (this.props.likes[likeId].station_id === this.props.ui.stationId &&
-    //   this.props.likes[likeId].track_id === this.props.audio.currentTrack) {
-    //     this.props.deleteLike(likeId);
-    //     break;
-    //   }
-    // }
 
     const deleteLike = Object.values(this.props.likes).find((like) =>
       like.station_id === this.props.ui.stationId &&
@@ -206,21 +169,13 @@ class MediaBar extends React.Component {
   }
 
   unDislike() {
+    
     const deleteDislike = Object.values(this.props.dislikes).find((dislike) =>
       dislike.station_id === this.props.ui.stationId &&
         dislike.track_id === this.props.audio.currentTrack
       );
-    debugger;
     this.props.deleteDislike(deleteDislike.id);
-    // for (let i = 0; i < this.props.ui.dislikes.length; i++) {
-    //   let dislikeId = this.props.ui.dislikes[i];
-    //   if (this.props.dislikes[dislikeId] === undefined) continue;
-    //   if (this.props.dislikes[dislikeId].station_id === this.props.ui.stationId &&
-    //   this.props.dislikes[dislikeId].track_id === this.props.audio.currentTrack) {
-    //     this.props.deleteDislike(dislikeId);
-    //     break;
-    //   }
-    // }
+
   }
 
   render() {
