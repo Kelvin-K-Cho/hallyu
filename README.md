@@ -6,6 +6,9 @@ Application Link: [Hallyu](http://hallyu.herokuapp.com/#/)
 
 ![HomePage](https://s3-us-west-1.amazonaws.com/hallyu-dev/images/Screen+Shot+2018-02-09+at+1.30.23+PM.png)
 
+# Technology
+  Hallyu was designed and built in two weeks using Ruby on Rails RESTful backend to handle the PostgreSQL database with a React/Redux frontend.
+
 # Features
 + User authentication using secure session tokens via encryption provided by BCrypt.
 + Media Bar that allows users to play/pause audio, skip tracks and adjust volume.
@@ -91,9 +94,6 @@ Application Link: [Hallyu](http://hallyu.herokuapp.com/#/)
 ```
 
 The tag above is placed over the slider element in order to imitate tracking the progress of the bar.
-
-# Technology
-  Hallyu was designed and built in two weeks using Ruby on Rails RESTful backend to handle the PostgreSQL database with a React/Redux frontend.
 
 # Future Implementation
 + Search bar to add existing stations to user's stations.
