@@ -10,6 +10,7 @@ class Signup extends React.Component{
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleInput(type){
@@ -23,6 +24,12 @@ class Signup extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     this.props.createNewUser(this.state).then( () => this.props.history.push(`/stations`) );
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    const demo = {email: 'pandora', password: 'secret'};
+    this.props.login(demo).then(() => this.props.history.push('/stations'));
   }
 
   render(){
@@ -49,6 +56,7 @@ class Signup extends React.Component{
               />
           </label>
           <button onClick={this.handleSubmit}>Sign Up</button>
+          <button id="button-demo" onClick={this.handleDemo}>Demo User</button>
         </form>
         <div id="check-account">Already have a Hallyu account?
           &nbsp;<Link id="link-session" to='/login'>Log In</Link>

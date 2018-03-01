@@ -28,7 +28,6 @@ class Login extends React.Component {
     e.preventDefault();
     const demo = {email: 'pandora', password: 'secret'};
     this.props.login(demo).then(() => this.props.history.push('/stations'));
-
   }
 
   render() {
