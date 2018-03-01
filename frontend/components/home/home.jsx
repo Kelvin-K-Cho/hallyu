@@ -7,7 +7,6 @@ class Home extends React.Component {
         <h1>Hallyu</h1>
         <h2>Start listening for free.</h2>
         <h3>Every kpop station evolves with your tastes.  Sit back and enjoy.</h3>
-        
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ErrorList from '../error/error_list';
+import LogoIcon from './logo_icon';
 
 class NavBar extends React.Component {
 
@@ -16,7 +17,7 @@ class NavBar extends React.Component {
     let display;
     let logo = (
       <Link to="/">
-        <h1 id="logo">Hallyu</h1>
+        <LogoIcon/>
       </Link>
     );
     if (this.props.currentUser) {
