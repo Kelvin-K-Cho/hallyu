@@ -169,7 +169,7 @@ class MediaBar extends React.Component {
   }
 
   unDislike() {
-    
+
     const deleteDislike = Object.values(this.props.dislikes).find((dislike) =>
       dislike.station_id === this.props.ui.stationId &&
         dislike.track_id === this.props.audio.currentTrack
