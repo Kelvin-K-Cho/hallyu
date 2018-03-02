@@ -6,7 +6,7 @@
   height: 100%;
   width: 100%;
   background-color: #224099;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 input[type=range] {
@@ -113,6 +113,7 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 #media-buttons {
+  position: static;
   width:30%;
   text-align: center;
   display:flex;
