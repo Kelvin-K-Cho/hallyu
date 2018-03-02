@@ -28,9 +28,7 @@ module.exports = {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'bundle.js'
   },
-  resolve: {
-    extensions: ['.js', '.jsx', '*']
-  },
+  plugins: plugins,
   module: {
     loaders: [
       {
@@ -44,4 +42,7 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
+  resolve: {
+    extensions: ['.js', '.jsx', '*']
+  },
 };
