@@ -351,7 +351,7 @@ class MediaBar extends React.Component {
       );
     } else {
       return (
-        <div id="audioplayer"></div>
+        <div></div>
       );
     }
   }
