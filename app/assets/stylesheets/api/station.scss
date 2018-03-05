@@ -161,6 +161,10 @@
   font-size: 25px;
 }
 
+#form-submit {
+  margin-top: 2%;
+}
+
 #form-submit div {
   margin: 20px;
   height: 100%;
@@ -169,16 +173,18 @@
   text-align: center;
 }
 
+#form-container {
+  text-align: center;
+}
+
 #form-name {
-  padding-right: 405px;
+
 }
 
 #form-description {
-  padding-right: 419px;
 }
 
 #form-image {
-  padding-right: 398px;
 }
 
 #form-preview {
@@ -192,7 +198,7 @@
 }
 
 #form-input, #form-textarea {
-  margin-left: 467px;
+  margin: 0 auto;
   width: 500px;
   border: none;
   border-radius: 2px;
@@ -208,7 +214,6 @@
 }
 
 #form-input-image {
-  margin-left: 467px;
 }
 
 #form-textarea {
@@ -217,8 +222,8 @@
 }
 
 #form-cancel {
-  margin-top: 30px;
-  margin-left: 860px;
+  margin-left: 8%;
+  display: inline-block;
   height: 20px;
   width: 60px;
   background-color: #fff;

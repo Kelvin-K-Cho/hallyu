@@ -99,7 +99,6 @@ class StationForm extends React.Component {
                 onChange={this.updateFile}
                 id="form-input-image"
                 />
-            <br/>
             <Link to={'/stations'}>
               <button id='form-cancel'>Cancel</button>
             </Link>
