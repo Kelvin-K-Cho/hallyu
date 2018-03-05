@@ -26,11 +26,6 @@ class StationIndex extends React.Component {
                />
             ))
           }
-          <Link to={`/stations/new`}>
-            <li>
-              <AddingIcon/>
-            </li>
-          </Link>
         </ul>
       </section>
     );

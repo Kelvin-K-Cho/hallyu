@@ -45,9 +45,18 @@ div {
   text-decoration: none;
 }
 
-#now-playing {
+#link-new {
   top: 25px;
   left: 180px;
+  position: absolute;
+  font-size: 16px;
+  color: #e6e6e6;
+  text-decoration: none;
+}
+
+#now-playing {
+  top: 25px;
+  left: 327px;
   position: absolute;
   font-size: 16px;
   color: #e6e6e6;

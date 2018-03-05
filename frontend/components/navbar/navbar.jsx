@@ -72,11 +72,13 @@ class NavBar extends React.Component {
               My Stations
             </Link>
             &nbsp;
+            <Link id="link-new" to={`/stations/new`}>
+            Create Station
+            </Link>
             &nbsp;
             <span id="now-playing">
               Now Playing{station}
             </span>
-            <ErrorList errors={ this.props.errors } />
             <div>
               {display}
             </div>
@@ -89,11 +91,13 @@ class NavBar extends React.Component {
               My Stations
             </Link>
             &nbsp;
+            <Link id="link-new" to={`/stations/new`}>
+            Create Station
+            </Link>
             &nbsp;
             <div id="now-playing">
               Now Playing
             </div>
-            <ErrorList errors={ this.props.errors } />
             <div>
               {display}
             </div>
