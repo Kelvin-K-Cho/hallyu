@@ -79,6 +79,7 @@ class NavBar extends React.Component {
             <span id="now-playing">
               Now Playing{station}
             </span>
+            <ErrorList errors={ this.props.errors } />
             <div>
               {display}
             </div>
@@ -95,9 +96,10 @@ class NavBar extends React.Component {
             Create Station
             </Link>
             &nbsp;
-            <div id="now-playing">
+            <span id="now-playing">
               Now Playing
-            </div>
+            </span>
+            <ErrorList errors={ this.props.errors } />
             <div>
               {display}
             </div>
