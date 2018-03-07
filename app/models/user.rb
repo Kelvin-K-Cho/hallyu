@@ -23,7 +23,7 @@ class User < ApplicationRecord
   validates :session_token, :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_attached_file :image, default_url: "profile-placeholder.png"
+  has_attached_file :image, default_url: "github.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   has_many :stations,

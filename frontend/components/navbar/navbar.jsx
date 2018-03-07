@@ -29,7 +29,9 @@ class NavBar extends React.Component {
           <Link to={"/"}>
             <button id="button-logout" onClick={this.props.logout}>Logout</button>
           </Link>
-          <img id="image-user" src={this.props.currentUser.image_url}/>
+          <a target="_blank" href={`https://github.com/Kelvin-K-Cho/`}>
+            <img id="image-user" src={this.props.currentUser.image_url}/>
+          </a>
         </div>
       );
     } else {
