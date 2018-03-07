@@ -24,7 +24,18 @@ class StationForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState(newProps.station);
+    if (newProps.station) {
+      this.setState(newProps.station);
+    }
+    if (newProps.formType === 'new' && this.props.formType !== "new") {
+      this.setState({
+        station_name: '',
+        description: '',
+        imageFile: null,
+        imageUrl: null,
+        imageLoaded: false
+      });
+    }
   }
 
   update(field) {
@@ -85,11 +96,13 @@ class StationForm extends React.Component {
             <div id="form-name">Station Name:</div>
               <input
                 type="text"
+                value={this.state.station_name}
                 onChange={this.update('station_name')}
                 id="form-input"
                 />
             <div id="form-description">Description:</div>
               <textarea
+                value={this.state.description}
                 onChange={this.update("description")}
                 id="form-textarea"
                 />
