@@ -118,24 +118,25 @@
 }
 
 #description-station {
-  width: 30%;
+  width: 450px;
   color: #fff;
   padding: 20px;
 }
 
 #delete-station {
   position: absolute;
-  margin-left: 10%;
+  margin-left: 150px;
   height: 26px;
-  width: 60px;
   padding: 4px 10px 5px 10px;
   background-color: #fff;
   color: #224099;
-  border-radius: 2px;
+  border-radius: 8px;
   text-decoration: none;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 600;
   text-align: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px black;
 }
 
 #container-loading {
@@ -226,6 +227,11 @@
 }
 
 #form-input-image {
+  border: none;
+  -webkit-appearance: none;
+  background:none;
+  color: white;
+  cursor:pointer;
 }
 
 #form-textarea {

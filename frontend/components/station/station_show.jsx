@@ -27,7 +27,9 @@ class StationShow extends React.Component {
       <div id="container-station">
         <h1 id="name-station">
           {station.station_name} &nbsp;
-          <Link className="link-edit" to={`/stations/${station.id}/edit`}>Edit</Link>
+          <Link className="link-edit" to={`/stations/${station.id}/edit`}>
+            <i class="fas fa-edit"></i>
+          </Link>
         </h1>
         <div id="body-station">
           <img id="img-station" src={station.image_url}/>
