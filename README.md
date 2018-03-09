@@ -4,10 +4,10 @@ Hallyu, also known as the "Korean Wave", is a single-page music web application 
 
 Application Link: [Hallyu](http://hallyu.herokuapp.com/#/)
 
-![HomePage](https://s3-us-west-1.amazonaws.com/hallyu-dev/images/Screen+Shot+2018-02-09+at+1.30.23+PM.png)
+![HomePage](https://s3-us-west-1.amazonaws.com/hallyu-dev/images/Screen+Shot+2018-03-09+at+9.36.12+AM.png)
 
 # Technology
-  Hallyu was designed and built in two weeks using Ruby on Rails RESTful backend to handle the PostgreSQL database with a React/Redux frontend.
+  Designed and built in two weeks, Hallyu combines using Ruby on Rails as a RESTful backend to handle a PostgreSQL database with a React/Redux frontend.
 
 # Features
 + User authentication using secure session tokens via encryption provided by BCrypt.
@@ -16,7 +16,7 @@ Application Link: [Hallyu](http://hallyu.herokuapp.com/#/)
 + Each station keeps track of the likes/dislikes of every track leading to more personalization of the user experience.
 + Image Uploading provided by Paperclip and hosted on Amazon Web Services.
 
-![FullApp](https://s3-us-west-1.amazonaws.com/hallyu-dev/images/Screen+Shot+2018-02-09+at+2.36.46+PM.png)
+![FullApp](https://s3-us-west-1.amazonaws.com/hallyu-dev/images/Screen+Shot+2018-03-09+at+9.42.36+AM.png)
 
 # Challenges
 1. The media player was built utilizing React/Redux.  HTML5's native audio tag was only used to parse the audio (no outside library was used for this feature).  The "state" of the media player is tracked by the application.
